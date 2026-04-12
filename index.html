@@ -4,27 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pratik Prakash — Content Marketer & Editorial PM</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<meta name="description" content="Pratik Prakash - Building brand language from the ground up. Where editorial instinct meets measurable growth.">
+<meta name="keywords" content="Pratik Prakash, Content Marketer, Editorial PM, Firstock, Brand Language, Growth Scaling, Copywriter">
+<meta name="author" content="Pratik Prakash">
+<meta property="og:title" content="Pratik Prakash — Content Marketer & Editorial PM">
+<meta property="og:description" content="Building brand language from the ground up where editorial instinct meets measurable growth.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://pratikprakash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #0e0d0b;
-    --paper: #f5f0e8;
-    --gold: #b8892a;
-    --gold-light: #e8d5a3;
-    --muted: #7a7469;
-    --rule: #d4cfc5;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-    --mono: 'DM Mono', monospace;
+    --ink: #1C1C1C;
+    --paper: #FFFFFF;
+    --gold: #1C1C1C;
+    --gold-light: #737373;
+    --muted: #737373;
+    --rule: #EAEAEA;
+    --serif: 'Inter', -apple-system, sans-serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: ui-monospace, Menlo, Monaco, monospace;
+    --glass-bg: transparent;
+    --glass-border: var(--rule);
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--paper);
+    background-color: var(--paper);
+    background-image: radial-gradient(var(--rule) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
     color: var(--ink);
     font-family: var(--sans);
     font-weight: 300;
@@ -32,14 +43,29 @@
     overflow-x: hidden;
   }
 
+  .highlighter {
+    background: linear-gradient(104deg, rgba(255,230,50,0) 0.9%, rgba(255,230,50,0.85) 2.4%, rgba(255,230,50,0.45) 5.8%, rgba(255,230,50,0.85) 93%, rgba(255,230,50,0) 96%);
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    font-style: normal;
+  }
+  
+  .sketch-box {
+    border: 2px solid var(--ink);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  .hidden { opacity: 0; transform: translateY(20px); transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .visible { opacity: 1; transform: translateY(0); }
+
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.25rem 4rem;
-    background: rgba(245, 240, 232, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--rule);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid var(--ink);
+    border-radius: 0 0 255px 15px/0 0 15px 255px;
   }
   nav .logo {
     font-family: var(--mono);
@@ -84,27 +110,25 @@
     margin-bottom: 1.5rem;
   }
   .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(4rem, 7vw, 7rem);
-    font-weight: 300;
-    line-height: 0.95;
+    font-family: var(--sans);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 2rem;
   }
   .hero-name em {
-    font-style: italic;
+    font-style: normal;
     color: var(--muted);
   }
   .hero-tagline {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    font-weight: 400;
     color: var(--muted);
-    max-width: 38ch;
+    max-width: 45ch;
     line-height: 1.6;
     margin-bottom: 3rem;
-    border-left: 2px solid var(--gold);
-    padding-left: 1.25rem;
   }
   .hero-cta {
     display: flex; gap: 1rem; flex-wrap: wrap;
@@ -112,25 +136,29 @@
   .btn {
     font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
     text-transform: uppercase; text-decoration: none; padding: 0.85rem 2rem;
-    border: 1px solid var(--ink); color: var(--ink); transition: all 0.2s;
-    cursor: pointer; background: transparent;
+    border: 2px solid var(--ink); color: var(--ink); transition: background 0.2s, transform 0.1s;
+    cursor: pointer; background: var(--paper);
+    transform: translateY(0);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   }
-  .btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
-  .btn-ghost { border-color: var(--rule); color: var(--muted); }
-  .btn-ghost:hover { background: var(--rule); color: var(--ink); transform: translateY(-2px); }
+  .btn:hover { background: rgba(17,17,17,0.05); }
+  .btn:active { transform: translateY(4px); }
+  
+  .btn-ghost { border-color: transparent; color: var(--muted); border-radius: 4px; background: transparent; }
+  .btn-ghost:hover { color: var(--ink); background: transparent; text-decoration: underline; }
   
   .btn-primary {
     font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
     text-transform: uppercase; text-decoration: none; padding: 0.85rem 2.5rem;
-    background: var(--gold); color: var(--ink); border: 1px solid var(--gold);
-    font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 14px rgba(184, 137, 42, 0.25);
+    background: var(--ink); color: var(--paper); border: 2px solid var(--ink);
+    font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.1s;
+    transform: translate(0, 0);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   }
   .btn-primary:hover {
-    transform: translateY(-3px); box-shadow: 0 6px 20px rgba(184, 137, 42, 0.4);
-    background: #c9962e; border-color: #c9962e; color: var(--ink);
+    background: #333; color: var(--paper);
   }
-  .btn-primary:active { transform: translateY(0px); box-shadow: 0 2px 8px rgba(184, 137, 42, 0.2); }
+  .btn-primary:active { transform: translate(4px, 4px); }
   .nav-cta {
     padding: 0.6rem 1.5rem; font-size: 0.65rem; border-radius: 2px;
   }
@@ -192,17 +220,24 @@
     letter-spacing: 0.1em;
   }
   .section-title {
-    font-family: var(--serif);
-    font-size: 2.8rem;
-    font-weight: 300;
-    line-height: 1;
+    font-family: var(--sans);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
 
   /* EXPERIENCE */
-  #experience { background: var(--ink); color: var(--paper); }
-  #experience .section-title { color: var(--paper); }
-  #experience .section-header { border-color: rgba(245,240,232,0.15); }
+  #experience { background: transparent; color: var(--ink); }
+  #experience .section-title { color: var(--ink); }
+  #experience .section-header { border-color: var(--rule); }
   #experience .section-num { color: var(--gold-light); }
+  .exp-grid {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 3rem;
+  }
 
   .exp-grid {
     display: grid; grid-template-columns: 280px 1fr; gap: 0;
@@ -229,20 +264,20 @@
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(245,240,232,0.4);
+    color: var(--muted);
     transition: color 0.2s;
   }
   .exp-nav-role {
     font-size: 0.95rem;
-    font-weight: 400;
-    color: rgba(245,240,232,0.6);
+    font-weight: 500;
+    color: var(--ink);
     margin-top: 0.2rem;
     transition: color 0.2s;
   }
   .exp-nav-date {
     font-family: var(--mono);
     font-size: 0.65rem;
-    color: rgba(245,240,232,0.3);
+    color: var(--muted);
     margin-top: 0.2rem;
   }
 
@@ -260,26 +295,26 @@
     margin-bottom: 0.5rem;
   }
   .exp-panel-role {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 2.2rem;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.1;
-    color: var(--paper);
+    color: var(--ink);
     margin-bottom: 0.5rem;
   }
   .exp-panel-date {
     font-family: var(--mono);
     font-size: 0.7rem;
-    color: rgba(245,240,232,0.4);
+    color: var(--muted);
     margin-bottom: 2rem;
   }
   .exp-panel ul {
     list-style: none; display: flex; flex-direction: column; gap: 1rem;
   }
   .exp-panel ul li {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: rgba(245,240,232,0.75);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
     line-height: 1.65;
     padding-left: 1.25rem;
     position: relative;
@@ -291,8 +326,8 @@
     font-size: 0.8rem;
   }
   .exp-panel ul li strong {
-    color: var(--paper);
-    font-weight: 400;
+    color: var(--ink);
+    font-weight: 600;
   }
 
   /* SKILLS */
@@ -300,16 +335,17 @@
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
+    gap: 1.5rem;
+    background: transparent;
   }
   .skill-card {
     background: var(--paper);
-    padding: 2.5rem 2rem;
-    transition: background 0.2s;
+    border: 2px solid var(--ink);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 3rem 2.5rem;
+    transition: all 0.4s ease;
   }
-  .skill-card:hover { background: rgba(14,13,11,0.03); }
+  .skill-card:hover { transform: translate(4px, 4px); }
   .skill-icon {
     font-family: var(--mono);
     font-size: 1.5rem;
@@ -318,14 +354,16 @@
     display: block;
   }
   .skill-name {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-family: var(--sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
     margin-bottom: 0.5rem;
   }
   .skill-desc {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--muted);
+    font-weight: 400;
     line-height: 1.6;
   }
 
@@ -347,10 +385,10 @@
     display: flex; flex-direction: column; justify-content: center;
   }
   .about-text {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 1.5;
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.6;
     color: var(--ink);
   }
   .about-detail {
@@ -373,52 +411,109 @@
     margin-bottom: 0.75rem;
   }
   .edu-degree {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 1.15rem;
-    font-weight: 400;
+    font-weight: 500;
   }
   .edu-school { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
 
   /* CONTACT */
   #contact {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 10rem 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+  }
+  .contact-headline {
+    font-family: var(--sans);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
     text-align: center;
-    padding: 8rem 4rem;
   }
-  #contact .section-title { color: var(--paper); font-size: 4rem; }
   .contact-sub {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: rgba(245,240,232,0.5);
-    margin: 1rem 0 3rem;
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 4rem;
+    text-align: center;
+    font-weight: 400;
   }
-  .contact-links {
-    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+  .contact-grid {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
   }
-  .contact-link {
-    font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--ink); text-decoration: none;
-    padding: 1.25rem 3rem; background: var(--gold); border: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 600; border-radius: 2px; box-shadow: 0 4px 15px rgba(184, 137, 42, 0.2);
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
   }
-  .contact-link:hover {
-    background: #c9962e; transform: translateY(-4px); 
-    box-shadow: 0 8px 25px rgba(184, 137, 42, 0.4); color: var(--ink);
+  .contact-label {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    transition: color 0.2s ease;
   }
-  .contact-link.secondary {
-    background: transparent; color: var(--paper); border: 1px solid rgba(245,240,232,0.3);
-    box-shadow: none; font-weight: 400; padding: 1.25rem 2.5rem;
+  .contact-value {
+    font-family: var(--sans);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.4rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
-  .contact-link.secondary:hover {
-    background: rgba(245,240,232,0.1); border-color: var(--paper); 
-    transform: translateY(-4px); color: var(--paper);
-  }
+  .contact-item:hover .contact-label { color: var(--ink); }
+  .contact-item:hover .contact-value { border-color: var(--ink); transform: translateY(-3px); }
 
-  /* PORTFOLIO */
+  /* IMPACT STORY */
   #portfolio { background: var(--paper); }
+  .impact-story {
+    max-width: 800px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 0;
+  }
+  .impact-story p {
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .impact-story .drop-cap {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .impact-metrics {
+    font-family: var(--mono);
+    color: #c9962e;
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 0 0.3rem;
+  }
+  .impact-cta {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -483,16 +578,9 @@
 
   /* VIEWER MODAL */
   #viewer-modal {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(14,13,11,0.95);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-    display: flex;
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(5,5,5,0.85); backdrop-filter: blur(24px);
     flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
   }
   #viewer-modal.active {
     opacity: 1;
@@ -578,14 +666,17 @@
     .about-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 3rem 1.5rem; }
     .about-right { padding: 3rem 1.5rem; }
     section { padding: 4rem 1.5rem; }
-    .section-title { font-size: 2.2rem; }
+    .section-title { font-size: 2rem; }
     .mammoth-content { padding: 2rem 1.5rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
+    .impact-story p { font-size: 1.1rem; }
+    .contact-grid { flex-direction: column; gap: 3rem; align-items: center; }
   }
 </style>
 </head>
 <body>
 
+<header>
 <nav>
   <span class="logo">Pratik Prakash</span>
   <div class="nav-right">
@@ -593,20 +684,22 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#portfolio">Story</a></li>
     </ul>
-    <a href="#contact" class="btn-primary nav-cta">Let's Talk</a>
+    <a href="mailto:pratikprakash50@gmail.com" class="btn-primary nav-cta">Let's Talk</a>
   </div>
 </nav>
+</header>
 
+<main>
 <section class="hero" id="home">
   <div class="hero-left">
     <p class="hero-eyebrow">Content Marketer & Editorial PM</p>
     <h1 class="hero-name">Pratik<br><em>Prakash</em></h1>
-    <p class="hero-tagline">Building brand language from the ground up — where editorial instinct meets measurable growth.</p>
+    <p class="hero-tagline">Building brand language from the ground up — where editorial instinct meets <em class="highlighter">measurable growth</em>.</p>
     <div class="hero-cta">
       <a href="#portfolio" class="btn-primary">See How I Scale Brands</a>
-      <a href="#contact" class="btn btn-ghost">Book a Discovery Call</a>
+      <a href="mailto:pratikprakash50@gmail.com" class="btn btn-ghost">Book a Discovery Call</a>
     </div>
   </div>
   <div class="hero-right">
@@ -754,41 +847,39 @@
 <section id="portfolio">
   <div class="section-header">
     <span class="section-num">04</span>
-    <h2 class="section-title">Portfolio</h2>
+    <h2 class="section-title">The Editorial Edge</h2>
   </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-card" onclick="openViewer('The Ultimate Guide to F&O Trading.pdf', 'pdf', 'The Ultimate Guide to F&O Trading')">
-      <span class="portfolio-type">Comprehensive Guide · PDF</span>
-      <h3 class="portfolio-title">The Ultimate Guide to F&O Trading</h3>
-      <p class="portfolio-desc">An extensive deep dive into Futures & Options trading strategies. Designed to educate clients and capture high-intent search traffic.</p>
-      <span class="portfolio-btn">Read Full Strategy</span>
-    </div>
-    <div class="portfolio-card" onclick="openViewer('Writing Guidelines.docx', 'docx', 'Writing Guidelines')">
-      <span class="portfolio-type">Guidelines · Word</span>
-      <h3 class="portfolio-title">Writing Guidelines</h3>
-      <p class="portfolio-desc">A comprehensive set of writing standards and editorial strategies designed to maintain a consistent brand voice.</p>
-      <span class="portfolio-btn">View Live Document</span>
-    </div>
-    <div class="portfolio-card" onclick="openViewer('162726final profile   sentinel information security162726.pdf', 'pdf', 'Sentinel Information Security Profile')">
-      <span class="portfolio-type">Company Profile · PDF</span>
-      <h3 class="portfolio-title">Sentinel Information Security</h3>
-      <p class="portfolio-desc">An executive company profile demonstrating B2B copywriting capabilities and organizational storytelling.</p>
-      <span class="portfolio-btn">Read Full Profile</span>
+  <div class="impact-story">
+    <p><span class="drop-cap">M</span>y foundation wasn't in marketing—it was in journalism. At SiliconIndia, I spent years dissecting the minds of CXOs and engineering complex publishing pipelines. When I walked into Firstock Broking, there was no content ecosystem. Just an objective.</p>
+    <p>Leveraging the editorial rigor and cross-functional leadership I honed in publishing, I didn't just write blog posts; I architected a growth engine from zero. By executing a high-volume, full-funnel strategy, we scaled to 300+ optimized articles, catapulting organic traffic from total silence to <span class="impact-metrics">30,000 monthly clicks</span> and <span class="impact-metrics">3.4 million impressions</span>.</p>
+    <p>Let's address the artificial elephant in the room: with AI making content production so incredibly fast, why do you still need a writer? Because while algorithms are great for speed, they often struggle with soul. I treat AI as a helpful co-pilot to multiply my throughput, while acting as the final gatekeeper to protect your brand's unique voice. When it comes to standing out, you still need a human to ensure every piece has the <em>write</em> stuff.</p>
+    <p>Having successfully engineered a media machine from the ground up, the blueprint is proven. Now, I am ready to deploy it against even bigger challenges.</p>
+    <div class="impact-cta">
+      <a href="#contact" class="btn-primary">Book a Growth Challenge Call</a>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="section-header" style="border-color: rgba(245,240,232,0.12); justify-content: center;">
-    <span class="section-num" style="color: var(--gold-light);">05</span>
-    <h2 class="section-title">Let's Talk</h2>
-  </div>
-  <p class="contact-sub">Open to new opportunities, collaborations, and great conversations.</p>
-  <div class="contact-links">
-    <a href="mailto:pratikprakash50@gmail.com" class="contact-link">Email me directly</a>
-    <a href="tel:+918130983184" class="contact-link secondary">Call +91 81309 83184</a>
+  <h2 class="contact-headline">Ready to Scale?</h2>
+  <div class="contact-sub">Let's Talk.</div>
+  
+  <div class="contact-grid">
+    <a href="mailto:pratikprakash50@gmail.com" class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value">pratikprakash50@gmail.com</span>
+    </a>
+    <a href="https://www.linkedin.com/in/pratik-prakash-9a7049230/" target="_blank" class="contact-item">
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-value">Connect & Follow</span>
+    </a>
+    <a href="tel:+918130983184" class="contact-item">
+      <span class="contact-label">Phone</span>
+      <span class="contact-value">+91 81309 83184</span>
+    </a>
   </div>
 </section>
+</main>
 
 <footer>
   &copy; 2025 Pratik Prakash &nbsp;·&nbsp; Bengaluru, India
@@ -866,6 +957,125 @@
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
     });
+  });
+</script>
+<script>
+  let actx = null;
+  let tickBuffer = null;
+
+  function initAudio() {
+    if (actx) return;
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    actx = new AudioContext();
+
+    // Create a 10ms white noise buffer for typewriter ticks
+    const frameCount = actx.sampleRate * 0.01; 
+    tickBuffer = actx.createBuffer(1, frameCount, actx.sampleRate);
+    const channelData = tickBuffer.getChannelData(0);
+    for (let i = 0; i < frameCount; i++) {
+      channelData[i] = Math.random() * 2 - 1;
+    }
+
+    // Engine booted silently.
+  }
+
+  function playTick() {
+    if (!actx || actx.state === 'suspended') return;
+    const source = actx.createBufferSource();
+    source.buffer = tickBuffer;
+    
+    const filter = actx.createBiquadFilter();
+    filter.type = 'highpass';
+    filter.frequency.value = 5000;
+
+    const gainNode = actx.createGain();
+    gainNode.gain.setValueAtTime(0.04, actx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.01);
+
+    source.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(actx.destination);
+    source.start();
+  }
+
+  function playClack() {
+    if (!actx || actx.state === 'suspended') return;
+    
+    // High-pitched plastic click (noise burst)
+    const noiseSource = actx.createBufferSource();
+    noiseSource.buffer = tickBuffer;
+    
+    const noiseFilter = actx.createBiquadFilter();
+    noiseFilter.type = 'highpass';
+    noiseFilter.frequency.value = 4000;
+    
+    const noiseGain = actx.createGain();
+    noiseGain.gain.setValueAtTime(0.5, actx.currentTime);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.015);
+    
+    noiseSource.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(actx.destination);
+    noiseSource.start();
+
+    // The resonance "ping" of the switch spring
+    const osc = actx.createOscillator();
+    const oscGain = actx.createGain();
+    
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(1200, actx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(100, actx.currentTime + 0.02);
+    
+    oscGain.gain.setValueAtTime(0.15, actx.currentTime);
+    oscGain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.03);
+    
+    osc.connect(oscGain);
+    oscGain.connect(actx.destination);
+    
+    osc.start();
+    osc.stop(actx.currentTime + 0.04);
+  }
+
+  // Bind silent unlock to first interactions
+  document.addEventListener('mousedown', initAudio, { once: true });
+  document.addEventListener('keydown', initAudio, { once: true });
+  document.addEventListener('touchstart', initAudio, { once: true });
+
+  // Bind clack to all buttons and links
+  document.addEventListener('mousedown', (e) => {
+    if (e.target.closest('a') || e.target.closest('button')) {
+      playClack();
+    }
+  });
+
+  // Typewriter knob on scroll
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (Math.abs(window.scrollY - lastScrollY) > 60) {
+          playTick();
+          lastScrollY = window.scrollY;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Scroll Animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section, .hero-left, .hero-right').forEach((el) => {
+    el.classList.add('hidden');
+    observer.observe(el);
   });
 </script>
 </body>
