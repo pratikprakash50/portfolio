@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratik Prakash — Content Marketer & Editorial PM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0d0b;
+    --paper: #f5f0e8;
+    --gold: #b8892a;
+    --gold-light: #e8d5a3;
+    --muted: #7a7469;
+    --rule: #d4cfc5;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav .logo {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+  nav ul {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  nav ul a {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    padding: 5rem 3rem 5rem 4rem;
+    display: flex; flex-direction: column; justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--muted);
+  }
+  .hero-tagline {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 38ch;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.25rem;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; padding: 0.85rem 2rem;
+    border: 1px solid var(--ink); color: var(--ink); transition: all 0.2s;
+    cursor: pointer; background: transparent;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+  .btn-ghost { border-color: var(--rule); color: var(--muted); }
+  .btn-ghost:hover { background: var(--rule); color: var(--ink); transform: translateY(-2px); }
+  
+  .btn-primary {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; padding: 0.85rem 2.5rem;
+    background: var(--gold); color: var(--ink); border: 1px solid var(--gold);
+    font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(184, 137, 42, 0.25);
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px); box-shadow: 0 6px 20px rgba(184, 137, 42, 0.4);
+    background: #c9962e; border-color: #c9962e; color: var(--ink);
+  }
+  .btn-primary:active { transform: translateY(0px); box-shadow: 0 2px 8px rgba(184, 137, 42, 0.2); }
+  .nav-cta {
+    padding: 0.6rem 1.5rem; font-size: 0.65rem; border-radius: 2px;
+  }
+
+  .hero-right {
+    padding: 5rem 4rem 5rem 3rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    margin-bottom: 3rem;
+  }
+  .stat {
+    padding: 1.5rem;
+    background: rgba(14,13,11,0.04);
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  .hero-location {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .hero-location::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 4rem; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--ink); color: var(--paper); }
+  #experience .section-title { color: var(--paper); }
+  #experience .section-header { border-color: rgba(245,240,232,0.15); }
+  #experience .section-num { color: var(--gold-light); }
+
+  .exp-grid {
+    display: grid; grid-template-columns: 280px 1fr; gap: 0;
+  }
+  .exp-timeline {
+    padding-right: 3rem;
+    border-right: 1px solid rgba(245,240,232,0.1);
+  }
+  .exp-item-nav {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(245,240,232,0.08);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .exp-item-nav.active { padding-left: 1rem; position: relative; }
+  .exp-item-nav.active::before {
+    content: ''; position: absolute; left: 0; top: 1.25rem; bottom: 1.25rem;
+    width: 3px; background: var(--gold); border-radius: 2px;
+  }
+  .exp-item-nav.active .exp-nav-company { color: var(--gold-light); }
+  .exp-item-nav.active .exp-nav-role { color: var(--paper); }
+  .exp-nav-company {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    transition: color 0.2s;
+  }
+  .exp-nav-role {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(245,240,232,0.6);
+    margin-top: 0.2rem;
+    transition: color 0.2s;
+  }
+  .exp-nav-date {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(245,240,232,0.3);
+    margin-top: 0.2rem;
+  }
+
+  .exp-detail { padding-left: 3rem; }
+  .exp-panel { display: none; }
+  .exp-panel.active { display: block; animation: fadeUp 0.3s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .exp-panel-company {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+  }
+  .exp-panel-role {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--paper);
+    margin-bottom: 0.5rem;
+  }
+  .exp-panel-date {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: rgba(245,240,232,0.4);
+    margin-bottom: 2rem;
+  }
+  .exp-panel ul {
+    list-style: none; display: flex; flex-direction: column; gap: 1rem;
+  }
+  .exp-panel ul li {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.65;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .exp-panel ul li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+  }
+  .exp-panel ul li strong {
+    color: var(--paper);
+    font-weight: 400;
+  }
+
+  /* SKILLS */
+  #skills { background: var(--paper); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .skill-card {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+  .skill-card:hover { background: rgba(14,13,11,0.03); }
+  .skill-icon {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .skill-name {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .skill-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ABOUT */
+  #about {
+    background: #f0ebe2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  .about-left {
+    padding: 6rem 3rem 6rem 4rem;
+    border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .about-right {
+    padding: 6rem 4rem 6rem 3rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .about-text {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .about-detail {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-top: 1.5rem;
+  }
+  .edu-block {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .edu-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+  .edu-school { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* CONTACT */
+  #contact {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 8rem 4rem;
+  }
+  #contact .section-title { color: var(--paper); font-size: 4rem; }
+  .contact-sub {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(245,240,232,0.5);
+    margin: 1rem 0 3rem;
+  }
+  .contact-links {
+    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+  }
+  .contact-link {
+    font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink); text-decoration: none;
+    padding: 1.25rem 3rem; background: var(--gold); border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600; border-radius: 2px; box-shadow: 0 4px 15px rgba(184, 137, 42, 0.2);
+  }
+  .contact-link:hover {
+    background: #c9962e; transform: translateY(-4px); 
+    box-shadow: 0 8px 25px rgba(184, 137, 42, 0.4); color: var(--ink);
+  }
+  .contact-link.secondary {
+    background: transparent; color: var(--paper); border: 1px solid rgba(245,240,232,0.3);
+    box-shadow: none; font-weight: 400; padding: 1.25rem 2.5rem;
+  }
+  .contact-link.secondary:hover {
+    background: rgba(245,240,232,0.1); border-color: var(--paper); 
+    transform: translateY(-4px); color: var(--paper);
+  }
+
+  /* PORTFOLIO */
+  #portfolio { background: var(--paper); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  .portfolio-card {
+    display: flex; flex-direction: column;
+    background: rgba(14,13,11,0.03);
+    border: 1px solid var(--rule);
+    padding: 2.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .portfolio-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-4px);
+  }
+  .portfolio-card:hover .portfolio-type, 
+  .portfolio-card:hover .portfolio-desc { color: rgba(245,240,232,0.7); }
+  .portfolio-type {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+  .portfolio-title {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .portfolio-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    transition: color 0.3s ease;
+  }
+  .portfolio-btn {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .portfolio-btn::after {
+    content: '→';
+    font-family: var(--sans);
+    transition: transform 0.2s;
+  }
+  .portfolio-card:hover .portfolio-btn::after { transform: translateX(4px); }
+
+  /* VIEWER MODAL */
+  #viewer-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(14,13,11,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  #viewer-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .viewer-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(245,240,232,0.1);
+  }
+  .viewer-title {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--paper);
+    text-transform: uppercase;
+  }
+  .viewer-close {
+    background: transparent; border: none; cursor: pointer;
+    color: var(--paper); font-size: 2.5rem; font-weight: 300; line-height: 1;
+    transition: color 0.2s; padding: 0.5rem; margin-top: -5px;
+  }
+  .viewer-close:hover { color: var(--gold); }
+  .viewer-body {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .viewer-body iframe {
+    width: 100%; height: 100%; border: none;
+    background: var(--paper);
+  }
+  .mammoth-content {
+    width: 100%; max-width: 900px;
+    height: 100%; overflow-y: auto;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 4rem 5rem;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  }
+  .mammoth-content h1, .mammoth-content h2, .mammoth-content h3 {
+    font-family: var(--serif); font-weight: 400; margin: 1.5em 0 0.5em;
+  }
+  .mammoth-content h1 { font-size: 2.5rem; }
+  .mammoth-content p { margin-bottom: 1.2em; line-height: 1.8; }
+  .mammoth-content img { max-width: 100%; height: auto; margin: 2rem 0; }
+  .mammoth-content ul, .mammoth-content ol { margin-left: 2rem; margin-bottom: 1.2em; }
+  .mammoth-loading {
+    color: var(--paper); font-family: var(--mono); text-align: center; margin-top: 20%;
+    font-size: 0.9rem; letter-spacing: 0.1em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.25);
+    text-align: center;
+    padding: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(245,240,232,0.08);
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: var(--rule); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-right { padding: 2rem 1.5rem 4rem; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-timeline { border-right: none; border-bottom: 1px solid rgba(245,240,232,0.1); padding-right: 0; padding-bottom: 2rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .exp-detail { padding-left: 0; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    #about { grid-template-columns: 1fr; }
+    .about-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 3rem 1.5rem; }
+    .about-right { padding: 3rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .section-title { font-size: 2.2rem; }
+    .mammoth-content { padding: 2rem 1.5rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">Pratik Prakash</span>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Content Marketer & Editorial PM</p>
+    <h1 class="hero-name">Pratik<br><em>Prakash</em></h1>
+    <p class="hero-tagline">Building brand language from the ground up — where editorial instinct meets measurable growth.</p>
+    <div class="hero-cta">
+      <a href="#portfolio" class="btn-primary">See How I Scale Brands</a>
+      <a href="#contact" class="btn btn-ghost">Book a Discovery Call</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">30K</div>
+        <div class="stat-label">Monthly Clicks</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3.4M</div>
+        <div class="stat-label">Total Impressions</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">300+</div>
+        <div class="stat-label">SEO Blog Posts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1300+</div>
+        <div class="stat-label">LinkedIn Followers</div>
+      </div>
+    </div>
+    <p class="hero-location">Bengaluru, India</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-left">
+    <p class="about-text">"A strategist who builds with words — scaling brands from silence to signal."</p>
+    <p class="about-detail">Versatile content marketer and editorial project manager with a strong foundation in journalism. Proven ability to build brand language from the ground up, manage cross-functional projects, and create engaging multi-channel content tailored for the Indian market.</p>
+  </div>
+  <div class="about-right">
+    <div class="section-header" style="margin-bottom: 2rem;">
+      <span class="section-num">01</span>
+      <h2 class="section-title" style="font-size: 2rem;">Background</h2>
+    </div>
+    <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8;">My career began at SiliconIndia, where I interviewed CXOs and CTOs of major US companies — translating executive insight into compelling B2B narratives. Over three years, I grew from writer to sub-editor to project incharge, before joining Firstock Broking to build their entire content ecosystem from scratch.</p>
+    <div class="edu-block">
+      <p class="edu-label">Education</p>
+      <p class="edu-degree">B.A. Journalism & Mass Communication</p>
+      <p class="edu-school">Jagannath International Management School, Vasant Kunj · 2019–2022</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-timeline">
+      <div class="exp-item-nav active" onclick="showExp('firstock')">
+        <div class="exp-nav-company">Firstock Broking</div>
+        <div class="exp-nav-role">Content Team Lead</div>
+        <div class="exp-nav-date">Mar 2025 – Present</div>
+      </div>
+      <div class="exp-item-nav" onclick="showExp('si-pm')">
+        <div class="exp-nav-company">SiliconIndia</div>
+        <div class="exp-nav-role">Project Incharge</div>
+        <div class="exp-nav-date">Nov 2023 – Jan 2025</div>
+      </div>
+      <div class="exp-item-nav" onclick="showExp('si-sub')">
+        <div class="exp-nav-company">SiliconIndia</div>
+        <div class="exp-nav-role">Sub Editor</div>
+        <div class="exp-nav-date">Oct 2022 – Nov 2023</div>
+      </div>
+      <div class="exp-item-nav" onclick="showExp('si-writer')">
+        <div class="exp-nav-company">SiliconIndia</div>
+        <div class="exp-nav-role">Content Writer</div>
+        <div class="exp-nav-date">Jun 2022 – Oct 2022</div>
+      </div>
+    </div>
+    <div class="exp-detail">
+      <div class="exp-panel active" id="exp-firstock">
+        <p class="exp-panel-company">Firstock Broking Private Limited</p>
+        <p class="exp-panel-role">Content Team Lead,<br>Marketing Team</p>
+        <p class="exp-panel-date">March 2025 – Present</p>
+        <ul>
+          <li><strong>SEO & Traffic Growth:</strong> Conceptualized brand language from scratch and executed a content strategy scaling website traffic from 0 to 30,000 clicks/month with 3.4M total impressions.</li>
+          <li><strong>High-Volume Production:</strong> Authored 300+ SEO-driven blog posts and structured a comprehensive knowledge base with 1,000+ targeted FAQs.</li>
+          <li><strong>Social Media Expansion:</strong> Managed the corporate LinkedIn profile, driving organic follower growth from 200 to 1,300+. Scripted video content for YouTube and Instagram Reels.</li>
+          <li><strong>Copywriting & Sales Enablement:</strong> Authored high-converting B2C email templates, optimized core website language, and crafted ad copy for digital campaigns.</li>
+        </ul>
+      </div>
+      <div class="exp-panel" id="exp-si-pm">
+        <p class="exp-panel-company">SiliconIndia</p>
+        <p class="exp-panel-role">Project Incharge</p>
+        <p class="exp-panel-date">November 2023 – January 2025</p>
+        <ul>
+          <li><strong>Cross-Functional Leadership:</strong> Spearheaded complex publishing projects, liaising between Editorial, Sales, Design, Compliance, and SEO teams for seamless execution.</li>
+          <li><strong>Process Optimization:</strong> Ensured all project components aligned with overarching business and editorial goals from conception to final publication.</li>
+        </ul>
+      </div>
+      <div class="exp-panel" id="exp-si-sub">
+        <p class="exp-panel-company">SiliconIndia</p>
+        <p class="exp-panel-role">Sub Editor</p>
+        <p class="exp-panel-date">October 2022 – November 2023</p>
+        <ul>
+          <li><strong>Quality Assurance:</strong> Edited and refined initial drafts from the writing team, ensuring strict adherence to editorial guidelines, tone, and accuracy.</li>
+          <li><strong>Team Development:</strong> Provided constructive feedback to writers to elevate the overall quality of publication standards.</li>
+        </ul>
+      </div>
+      <div class="exp-panel" id="exp-si-writer">
+        <p class="exp-panel-company">SiliconIndia</p>
+        <p class="exp-panel-role">Content Writer</p>
+        <p class="exp-panel-date">June 2022 – October 2022</p>
+        <ul>
+          <li><strong>Executive Interviewing:</strong> Conducted in-depth interviews with CXOs and CTOs of prominent US-based companies across AI, Human Resources, Aerospace, and Defense.</li>
+          <li><strong>B2B Content Creation:</strong> Translated high-level executive insights into engaging, comprehensive B2B company profiles and articles.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Craft</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span class="skill-icon">#</span>
+      <p class="skill-name">Content Strategy & SEO</p>
+      <p class="skill-desc">Building end-to-end content ecosystems — from keyword architecture to full-funnel publication strategies that drive measurable organic growth.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">@</span>
+      <p class="skill-name">Digital & Social Media</p>
+      <p class="skill-desc">Managing brand presence across LinkedIn, YouTube, and Instagram — scripting reels, growing followers, and maintaining consistent voice.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">§</span>
+      <p class="skill-name">Editorial & Management</p>
+      <p class="skill-desc">Leading cross-functional publishing projects with multiple stakeholders — from conception through design, compliance, and final delivery.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">¶</span>
+      <p class="skill-name">Creative Writing</p>
+      <p class="skill-desc">Crafting compelling B2C and B2B copy — ad copy, email templates, executive profiles, and long-form articles with distinct brand voice.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Portfolio</h2>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-card" onclick="openViewer('The Ultimate Guide to F&O Trading.pdf', 'pdf', 'The Ultimate Guide to F&O Trading')">
+      <span class="portfolio-type">Comprehensive Guide · PDF</span>
+      <h3 class="portfolio-title">The Ultimate Guide to F&O Trading</h3>
+      <p class="portfolio-desc">An extensive deep dive into Futures & Options trading strategies. Designed to educate clients and capture high-intent search traffic.</p>
+      <span class="portfolio-btn">Read Full Strategy</span>
+    </div>
+    <div class="portfolio-card" onclick="openViewer('Writing Guidelines.docx', 'docx', 'Writing Guidelines')">
+      <span class="portfolio-type">Guidelines · Word</span>
+      <h3 class="portfolio-title">Writing Guidelines</h3>
+      <p class="portfolio-desc">A comprehensive set of writing standards and editorial strategies designed to maintain a consistent brand voice.</p>
+      <span class="portfolio-btn">View Live Document</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-header" style="border-color: rgba(245,240,232,0.12); justify-content: center;">
+    <span class="section-num" style="color: var(--gold-light);">05</span>
+    <h2 class="section-title">Let's Talk</h2>
+  </div>
+  <p class="contact-sub">Open to new opportunities, collaborations, and great conversations.</p>
+  <div class="contact-links">
+    <a href="mailto:pratikprakash50@gmail.com" class="contact-link">Email me directly</a>
+    <a href="tel:+918130983184" class="contact-link secondary">Call +91 81309 83184</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Pratik Prakash &nbsp;·&nbsp; Bengaluru, India
+</footer>
+<!-- VIEWER MODAL -->
+<div id="viewer-modal">
+  <div class="viewer-header">
+    <div class="viewer-title" id="viewer-title">Document Viewer</div>
+    <button class="viewer-close" onclick="closeViewer()" aria-label="Close Viewer">&times;</button>
+  </div>
+  <div class="viewer-body" id="viewer-body">
+    <!-- Viewer content injected via JS -->
+  </div>
+</div>
+
+<script>
+  function openViewer(url, type, title) {
+    const modal = document.getElementById('viewer-modal');
+    const titleEl = document.getElementById('viewer-title');
+    const bodyEl = document.getElementById('viewer-body');
+    
+    titleEl.textContent = title;
+    bodyEl.innerHTML = '<div class="mammoth-loading">Loading document...</div>';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Stop background scrolling
+
+    if (type === 'pdf') {
+      bodyEl.innerHTML = `<iframe src="${url}"></iframe>`;
+    } else if (type === 'docx') {
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Document not found');
+          return response.arrayBuffer();
+        })
+        .then(arrayBuffer => mammoth.convertToHtml({arrayBuffer: arrayBuffer}))
+        .then(result => {
+          bodyEl.innerHTML = `<div class="mammoth-content">${result.value}</div>`;
+        })
+        .catch(error => {
+          console.error(error);
+          bodyEl.innerHTML = `<div class="mammoth-content" style="display:flex;align-items:center;justify-content:center"><p style="color:var(--muted)">Unable to load document.</p></div>`;
+        });
+    }
+  }
+
+  function closeViewer() {
+    const modal = document.getElementById('viewer-modal');
+    const bodyEl = document.getElementById('viewer-body');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { bodyEl.innerHTML = ''; }, 300); // Clear element after animation
+  }
+
+  // Close modal on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('viewer-modal').classList.contains('active')) {
+      closeViewer();
+    }
+  });
+
+  function showExp(id) {
+    document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.exp-item-nav').forEach(n => n.classList.remove('active'));
+    document.getElementById('exp-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section[id], .hero');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
+    });
+  });
+</script>
+</body>
+</html>
