@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Works — Pratik Prakash</title>
+<meta name="description" content="A curated selection of writing samples by Pratik Prakash — B2B articles, trading guides, IPO analysis, explainers and more.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1C1C1C; --paper: #FAFAF8; --white: #FFFFFF;
+    --muted: #737373; --rule: #E2E2DC;
+    --accent: #2D5BE3;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --serif: 'Lora', Georgia, serif;
+    --mono: ui-monospace, Menlo, Monaco, monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--paper);
+    background-image: radial-gradient(var(--rule) 1.2px, transparent 1.2px);
+    background-size: 24px 24px;
+    color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.7;
+    padding: 5rem 4rem;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  .top-nav { display: flex; align-items: center; gap: 1rem; margin-bottom: 4rem; }
+  .btn-back {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 0.7rem 1.5rem; border: 1.5px solid var(--ink); color: var(--ink);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transition: all 0.2s;
+  }
+  .btn-back:hover { background: rgba(17,17,17,0.05); }
+
+  /* ─── HEADER ─── */
+  .page-header { margin-bottom: 4rem; max-width: 640px; }
+  .page-header h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.8rem; }
+  .page-header p { color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+
+  /* ─── SECTIONS ─── */
+  h2.section-title {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1.5rem; margin-top: 4rem;
+    padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  h2.section-title::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--ink); }
+
+  /* ─── GRID ─── */
+  .samples-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+  /* ─── CARD ─── */
+  .sample-card {
+    padding: 2rem 1.8rem;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .sample-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+  .sample-card .tag {
+    font-family: var(--mono); font-size: 0.62rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    display: block; margin-bottom: 0.8rem; font-weight: 500;
+  }
+  .sample-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.6rem; line-height: 1.4; }
+  .sample-card p { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem; line-height: 1.65; flex: 1; }
+  .btn-read {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer;
+    padding: 0.65rem 1.4rem; background: var(--ink); color: var(--white);
+    border: none; border-radius: 9999px; transition: background 0.2s;
+    align-self: flex-start; text-decoration: none;
+  }
+  .btn-read:hover { background: #333; }
+  .btn-read svg { flex-shrink: 0; }
+
+  /* ─── MODAL OVERLAY ─── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,10,10,0.65);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--white);
+    border-radius: 16px;
+    width: 90vw; max-width: 800px;
+    height: 88vh;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+    transform: translateY(20px);
+    transition: transform 0.25s;
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+
+  .modal-header {
+    padding: 1.2rem 1.8rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .modal-header-left { display: flex; flex-direction: column; gap: 0.2rem; }
+  .modal-tag { font-family: var(--mono); font-size: 0.6rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; }
+  .modal-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+
+  .modal-close {
+    background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 50%; width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0; transition: background 0.15s;
+    font-size: 1.1rem; color: var(--ink);
+  }
+  .modal-close:hover { background: var(--rule); }
+
+  .modal-body {
+    overflow-y: auto;
+    padding: 2.5rem 3rem;
+    flex: 1;
+    line-height: 1.8;
+  }
+
+  /* Loading & error states */
+  .modal-loading {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; gap: 1rem; color: var(--muted); font-size: 0.9rem;
+  }
+  .spinner {
+    width: 32px; height: 32px; border: 2px solid var(--rule);
+    border-top-color: var(--ink); border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* DOCX rendered content styles */
+  .modal-body h1, .modal-body h2, .modal-body h3 {
+    font-family: var(--serif); margin: 1.5rem 0 0.5rem;
+    line-height: 1.3; color: var(--ink);
+  }
+  .modal-body h1 { font-size: 1.7rem; font-weight: 600; }
+  .modal-body h2 { font-size: 1.3rem; font-weight: 600; }
+  .modal-body h3 { font-size: 1.1rem; font-weight: 600; }
+  .modal-body p { margin-bottom: 1rem; font-size: 0.97rem; color: #2a2a2a; }
+  .modal-body ul, .modal-body ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .modal-body li { margin-bottom: 0.4rem; font-size: 0.95rem; }
+  .modal-body strong, .modal-body b { font-weight: 600; }
+  .modal-body em, .modal-body i { font-style: italic; }
+  .modal-body table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.88rem; }
+  .modal-body th { background: var(--paper); font-weight: 600; text-align: left; padding: 0.5rem 0.8rem; border: 1px solid var(--rule); }
+  .modal-body td { padding: 0.5rem 0.8rem; border: 1px solid var(--rule); }
+
+  /* PDF embed */
+  .pdf-embed { width: 100%; height: 100%; border: none; }
+  .modal-body.pdf-mode { padding: 0; }
+
+  @media (max-width: 768px) {
+    body { padding: 3rem 1.5rem; }
+    .modal { width: 95vw; height: 92vh; }
+    .modal-body { padding: 1.5rem; }
+    h2.section-title { font-size: 0.65rem; }
+    .page-header h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="index.html" class="btn-back">← Back to Profile</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>Writing Samples & Portfolio</h1>
+    <p>A curated cross-section of my work — from macroeconomic B2B articles and IPO analysis to trading guides and market explainers. Click any card to read it here.</p>
+  </header>
+
+  <!-- ─── B2B ARTICLES ─── -->
+  <h2 class="section-title">B2B Articles</h2>
+  <div class="samples-grid">
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/The Trillion-Rupee Pivot_ How L&T & Nvidia Are Building India\'s AI Brain.docx','Finance & Tech','The Trillion-Rupee Pivot')">
+      <span class="tag">Finance & Tech</span>
+      <h3>The Trillion-Rupee Pivot</h3>
+      <p>How L&T & Nvidia are building India's AI Brain — the physical and algorithmic infrastructure behind a country's cognitive future.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/The Digital Accelerator_ How E-commerce is rewriting India\'s $1.docx','Retail & Macro','The Digital Accelerator')">
+      <span class="tag">Retail & Macro</span>
+      <h3>The Digital Accelerator</h3>
+      <p>How E-commerce is rewriting India's $1.6 Trillion Retail Destiny — a data-driven look at the forces reshaping a generation's shopping behaviour.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/The GDP Illusion_ How _Smart Money_ Filters Economic Noise.docx','Equity Economics','The GDP Illusion')">
+      <span class="tag">Equity Economics</span>
+      <h3>The GDP Illusion</h3>
+      <p>How "Smart Money" filters economic noise — why a booming economy doesn't always mean a booming market, and what professionals do about it.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Feature, Not a Bug — Inside India\'s Currency Strategy.docx','Macroeconomics','Feature, Not a Bug')">
+      <span class="tag">Macroeconomics</span>
+      <h3>Feature, Not a Bug</h3>
+      <p>Inside India's Currency Strategy — the narrative shift around the Rupee from market victim to deliberate policy instrument.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+  </div>
+
+  <!-- ─── BLOGS & GUIDES ─── -->
+  <h2 class="section-title">Blogs & Guides</h2>
+  <div class="samples-grid">
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Options Selling Strategies_ How to Be the Casino, Not the Gambler.docx','Options Trading','Options Selling Strategies')">
+      <span class="tag">Options Trading</span>
+      <h3>Options Selling Strategies</h3>
+      <p>How to Be the Casino, Not the Gambler — the counterintuitive case for selling premium and why the house always wins in the long run.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/The Covered Call Strategy_ How to _Rent Out_ Your Stocks for Monthly Income.docx','Investment Strategy','The Covered Call Strategy')">
+      <span class="tag">Investment Strategy</span>
+      <h3>The Covered Call Strategy</h3>
+      <p>How to "Rent Out" Your Stocks for Monthly Income — generating yield from a portfolio that would otherwise just sit and wait.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Psychology of Algorithmic Trading_ Why Even Bots Need Emotional Discipline.docx','Algorithmic Trading','Psychology of Algorithmic Trading')">
+      <span class="tag">Algorithmic Trading</span>
+      <h3>Psychology of Algorithmic Trading</h3>
+      <p>Why Even Bots Need Emotional Discipline — because the human writing the algorithm is still very much in the equation.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Why Paper Trading Fails in Real Options Trading_ The _Monopoly Money_ Trap.docx','Trading Psychology','The Monopoly Money Trap')">
+      <span class="tag">Trading Psychology</span>
+      <h3>The "Monopoly Money" Trap</h3>
+      <p>Why Paper Trading Fails in Real Options Trading — the uncomfortable truth about why your simulation profits disappear the moment real money is on the line.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+  </div>
+
+  <!-- ─── IPO ANALYSIS ─── -->
+  <h2 class="section-title">IPO Analysis & Reviews</h2>
+  <div class="samples-grid">
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Aye Finance IPO Review_ Google-Backed Giant or NPA Trap.docx','Due Diligence','Aye Finance IPO')">
+      <span class="tag">Due Diligence</span>
+      <h3>Aye Finance IPO: Google-Backed Giant or NPA Trap?</h3>
+      <p>You see "Backed by Google (CapitalG)" and you want to click "Apply." Hold your horses. An in-depth risk-vs-hype dissection.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Wakefit Innovations IPO_ The Sleep Giant Wakes Up (Detailed Review).docx','Consumer Tech','Wakefit Innovations IPO')">
+      <span class="tag">Consumer Tech</span>
+      <h3>Wakefit IPO: The Sleep Giant Wakes Up</h3>
+      <p>A detailed review of one of India's most anticipated D2C IPOs — financials, brand equity, and whether the valuation matches the hype.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Fractal Analytics IPO Review_ The _AI_ Label You Are Paying For.docx','Tech & AI','Fractal Analytics IPO')">
+      <span class="tag">Tech & AI</span>
+      <h3>Fractal Analytics: The "AI" Label You're Paying For</h3>
+      <p>Every company puts "AI" in their deck to get a higher valuation. Fractal Analytics doesn't just put it in the deck — they are the deck. A critical deep-dive.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Shadowfax Technologies IPO Review_ Delivering Gains or Losing Momentum.docx','Logistics Sector','Shadowfax Technologies IPO')">
+      <span class="tag">Logistics Sector</span>
+      <h3>Shadowfax Technologies IPO Review</h3>
+      <p>The logistics game is picking up speed, and Shadowfax is jumping into the public markets. A GMP, price, and fundamental review.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+  </div>
+
+  <!-- ─── MARKET EDUCATION ─── -->
+  <h2 class="section-title">Market Education & Explainers</h2>
+  <div class="samples-grid">
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/From Banyan Tree to Dalal Street_ The Story of BSE.docx','Stock Market History','From Banyan Tree to Dalal Street')">
+      <span class="tag">Stock Market History</span>
+      <h3>From Banyan Tree to Dalal Street</h3>
+      <p>The story of the BSE — tracing India's oldest exchange from a handful of traders under a banyan tree in 1855 to a global financial powerhouse.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/Budget 2026-27_ A Roadmap for a Modern, Self-Reliant India.docx','Policy & Markets','Union Budget 2026-27 Decoded')">
+      <span class="tag">Policy & Markets</span>
+      <h3>Union Budget 2026-27 Decoded</h3>
+      <p>A roadmap for a modern, self-reliant India — parsing the fiscal blueprint in plain English, without the usual PR spin.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/What Is Insider Trading_Blog.docx','Regulation & Ethics','What Is Insider Trading?')">
+      <span class="tag">Regulation & Ethics</span>
+      <h3>What Is Insider Trading?</h3>
+      <p>The truth behind the market's worst-kept secret — a cinematic explainer that makes a complex regulatory topic both gripping and clear.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+    <div class="sample-card" onclick="openDoc('drive-download-20260329T030218Z-1-001/How Margin Trading Works_ The Double-Edged Sword of the Stock Market.docx','Risk Management','How Margin Trading Works')">
+      <span class="tag">Risk Management</span>
+      <h3>How Margin Trading Works</h3>
+      <p>The double-edged sword of the stock market — explaining leverage with vivid analogies so even a first-year trader can follow, and respect it.</p>
+      <span class="btn-read">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Read Article
+      </span>
+    </div>
+
+  </div>
+
+  <!-- ─── MODAL ─── -->
+  <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-tag" id="modalTag"></span>
+          <span class="modal-title" id="modalTitle"></span>
+        </div>
+        <button class="modal-close" onclick="closeModal()" title="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div class="modal-loading">
+          <div class="spinner"></div>
+          <span>Loading article…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('modalOverlay');
+    const modalBody = document.getElementById('modalBody');
+    const modalTag = document.getElementById('modalTag');
+    const modalTitle = document.getElementById('modalTitle');
+
+    function openDoc(path, tag, title) {
+      modalTag.textContent = tag;
+      modalTitle.textContent = title;
+      modalBody.className = 'modal-body';
+      modalBody.innerHTML = '<div class="modal-loading"><div class="spinner"></div><span>Loading article…</span></div>';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      fetch(path)
+        .then(res => {
+          if (!res.ok) throw new Error('File not found: ' + path);
+          return res.arrayBuffer();
+        })
+        .then(buffer => {
+          return mammoth.convertToHtml({ arrayBuffer: buffer });
+        })
+        .then(result => {
+          modalBody.innerHTML = result.value || '<p style="color:var(--muted)">Could not render document content.</p>';
+        })
+        .catch(err => {
+          modalBody.innerHTML = `<div class="modal-loading"><p style="color:var(--muted)">Could not load file.<br><small>${err.message}</small></p></div>`;
+        });
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { modalBody.innerHTML = ''; }, 300);
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === overlay) closeModal();
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

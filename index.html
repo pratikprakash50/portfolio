@@ -1,1181 +1,1634 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pratik Prakash — Content Marketer & Editorial PM</title>
-<meta name="description" content="Pratik Prakash - Building brand language from the ground up. Where editorial instinct meets measurable growth.">
-<meta name="keywords" content="Pratik Prakash, Content Marketer, Editorial PM, Firstock, Brand Language, Growth Scaling, Copywriter">
-<meta name="author" content="Pratik Prakash">
-<meta property="og:title" content="Pratik Prakash — Content Marketer & Editorial PM">
-<meta property="og:description" content="Building brand language from the ground up where editorial instinct meets measurable growth.">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://pratikprakash.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratik Prakash — Content Marketer & Editorial PM</title>
+  <meta name="description"
+    content="Pratik Prakash - Building brand language from the ground up. Where editorial instinct meets measurable growth.">
+  <meta name="keywords"
+    content="Pratik Prakash, Content Marketer, Editorial PM, Firstock, Brand Language, Growth Scaling, Copywriter">
+  <meta name="author" content="Pratik Prakash">
+  <meta property="og:title" content="Pratik Prakash — Content Marketer & Editorial PM">
+  <meta property="og:description"
+    content="Building brand language from the ground up where editorial instinct meets measurable growth.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://pratikprakash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --ink: #1C1C1C;
-    --paper: #FFFFFF;
-    --gold: #1C1C1C;
-    --gold-light: #737373;
-    --muted: #737373;
-    --rule: #EAEAEA;
-    --serif: 'Inter', -apple-system, sans-serif;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --mono: ui-monospace, Menlo, Monaco, monospace;
-    --glass-bg: transparent;
-    --glass-border: var(--rule);
-  }
+    :root {
+      --ink: #1C1C1C;
+      --paper: #FFFFFF;
+      --gold: #1C1C1C;
+      --gold-light: #737373;
+      --muted: #737373;
+      --rule: #EAEAEA;
+      --serif: 'Inter', -apple-system, sans-serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --mono: ui-monospace, Menlo, Monaco, monospace;
+      --glass-bg: transparent;
+      --glass-border: var(--rule);
+    }
 
-  html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body {
-    position: relative;
-    background-color: var(--paper);
-    background-image: radial-gradient(var(--rule) 1.5px, transparent 1.5px);
-    background-size: 24px 24px;
-    color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+    body {
+      position: relative;
+      background-color: var(--paper);
+      background-image: radial-gradient(var(--rule) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-  .highlighter {
-    background: linear-gradient(104deg, rgba(255,230,50,0) 0.9%, rgba(255,230,50,0.85) 2.4%, rgba(255,230,50,0.45) 5.8%, rgba(255,230,50,0.85) 93%, rgba(255,230,50,0) 96%);
-    padding: 0.1em 0.3em;
-    border-radius: 2px;
-    font-style: normal;
-  }
-  
-  .sketch-box {
-    border: 2px solid var(--ink);
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  }
+    .highlighter {
+      background: linear-gradient(104deg, rgba(255, 230, 50, 0) 0.9%, rgba(255, 230, 50, 0.85) 2.4%, rgba(255, 230, 50, 0.45) 5.8%, rgba(255, 230, 50, 0.85) 93%, rgba(255, 230, 50, 0) 96%);
+      padding: 0.1em 0.3em;
+      border-radius: 2px;
+      font-style: normal;
+    }
 
-  /* PREMIUM GEOMETRIC ICONS */
-  .icon-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .bg-icon {
-    position: absolute;
-    color: var(--ink);
-    opacity: 0.04;
-    transform-origin: center;
-    will-change: transform;
-    stroke-width: 1px; /* Makes it look extremely technical and sharp */
-  }
+    .sketch-box {
+      border: 2px solid var(--ink);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
 
-  .hidden { opacity: 0; transform: translateY(20px); transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1); }
-  .visible { opacity: 1; transform: translateY(0); }
+    /* PREMIUM GEOMETRIC ICONS */
+    .icon-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.25rem 4rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 2px solid var(--ink);
-    border-radius: 0 0 255px 15px/0 0 15px 255px;
-  }
-  nav .logo {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .nav-right { display: flex; align-items: center; gap: 2.5rem; }
-  nav ul {
-    display: flex; gap: 2.5rem; list-style: none;
-  }
-  nav ul a {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-    transition: color 0.2s;
-  }
-  nav ul a:hover { color: var(--ink); }
+    .bg-icon {
+      position: absolute;
+      color: var(--ink);
+      opacity: 0.04;
+      transform-origin: center;
+      will-change: transform;
+      stroke-width: 1px;
+      /* Makes it look extremely technical and sharp */
+    }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
-  }
-  .hero-left {
-    padding: 5rem 3rem 5rem 4rem;
-    display: flex; flex-direction: column; justify-content: center;
-    border-right: 1px solid var(--rule);
-  }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-  .hero-name {
-    font-family: var(--sans);
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 2rem;
-  }
-  .hero-name em {
-    font-style: normal;
-    color: var(--muted);
-  }
-  .hero-tagline {
-    font-family: var(--sans);
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--muted);
-    max-width: 45ch;
-    line-height: 1.6;
-    margin-bottom: 3rem;
-  }
-  .hero-cta {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-  }
-  .btn {
-    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-    text-transform: uppercase; text-decoration: none; padding: 0.85rem 2rem;
-    border: 2px solid var(--ink); color: var(--ink); transition: background 0.2s, transform 0.1s;
-    cursor: pointer; background: var(--paper);
-    transform: translateY(0);
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  }
-  .btn:hover { background: rgba(17,17,17,0.05); }
-  .btn:active { transform: translateY(4px); }
-  
-  .btn-ghost { border-color: transparent; color: var(--muted); border-radius: 4px; background: transparent; }
-  .btn-ghost:hover { color: var(--ink); background: transparent; text-decoration: underline; }
-  
-  .btn-primary {
-    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-    text-transform: uppercase; text-decoration: none; padding: 0.85rem 2.5rem;
-    background: var(--ink); color: var(--paper); border: 2px solid var(--ink);
-    font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.1s;
-    transform: translate(0, 0);
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  }
-  .btn-primary:hover {
-    background: #333; color: var(--paper);
-  }
-  .btn-primary:active { transform: translate(4px, 4px); }
-  .nav-cta {
-    padding: 0.6rem 1.5rem; font-size: 0.65rem; border-radius: 2px;
-  }
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-  .hero-right {
-    padding: 5rem 4rem 5rem 3rem;
-    display: flex; flex-direction: column; justify-content: flex-end;
-  }
-  .hero-stats {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-    margin-bottom: 3rem;
-  }
-  .stat {
-    padding: 1.5rem;
-    background: rgba(14,13,11,0.04);
-  }
-  .stat-num {
-    font-family: var(--serif);
-    font-size: 2.8rem;
-    font-weight: 300;
-    line-height: 1;
-    color: var(--ink);
-  }
-  .stat-label {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.4rem;
-  }
-  .hero-location {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .hero-location::before {
-    content: '';
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-  }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  /* SECTION COMMON */
-  section { padding: 6rem 4rem; }
-  .section-header {
-    display: flex; align-items: baseline; gap: 1.5rem;
-    margin-bottom: 4rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .section-num {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-  }
-  .section-title {
-    font-family: var(--sans);
-    font-size: 2.2rem;
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 2px solid var(--ink);
+      border-radius: 0 0 255px 15px/0 0 15px 255px;
+    }
 
-  /* EXPERIENCE */
-  #experience { background: transparent; color: var(--ink); }
-  #experience .section-title { color: var(--ink); }
-  #experience .section-header { border-color: var(--rule); }
-  #experience .section-num { color: var(--gold-light); }
-  .exp-grid {
-    background: var(--paper);
-    border: 2px solid var(--ink);
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    padding: 3rem;
-  }
+    nav .logo {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-  .exp-grid {
-    display: grid; grid-template-columns: 280px 1fr; gap: 0;
-  }
-  .exp-timeline {
-    padding-right: 3rem;
-    border-right: 1px solid rgba(245,240,232,0.1);
-  }
-  .exp-item-nav {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(245,240,232,0.08);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .exp-item-nav.active { padding-left: 1rem; position: relative; }
-  .exp-item-nav.active::before {
-    content: ''; position: absolute; left: 0; top: 1.25rem; bottom: 1.25rem;
-    width: 3px; background: var(--gold); border-radius: 2px;
-  }
-  .exp-item-nav.active .exp-nav-company { color: var(--gold-light); }
-  .exp-item-nav.active .exp-nav-role { color: var(--paper); }
-  .exp-nav-company {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    transition: color 0.2s;
-  }
-  .exp-nav-role {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-top: 0.2rem;
-    transition: color 0.2s;
-  }
-  .exp-nav-date {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
 
-  .exp-detail { padding-left: 3rem; }
-  .exp-panel { display: none; }
-  .exp-panel.active { display: block; animation: fadeUp 0.3s ease; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
 
-  .exp-panel-company {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 0.5rem;
-  }
-  .exp-panel-role {
-    font-family: var(--sans);
-    font-size: 2.2rem;
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-  }
-  .exp-panel-date {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    margin-bottom: 2rem;
-  }
-  .exp-panel ul {
-    list-style: none; display: flex; flex-direction: column; gap: 1rem;
-  }
-  .exp-panel ul li {
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.65;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-  .exp-panel ul li::before {
-    content: '—';
-    position: absolute; left: 0;
-    color: var(--gold);
-    font-size: 0.8rem;
-  }
-  .exp-panel ul li strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
+    nav ul a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
 
-  /* SKILLS */
-  #skills { background: var(--paper); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    background: transparent;
-  }
-  .skill-card {
-    background: var(--paper);
-    border: 2px solid var(--ink);
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    padding: 3rem 2.5rem;
-    transition: all 0.4s ease;
-  }
-  .skill-card:hover { transform: translate(4px, 4px); }
-  .skill-icon {
-    font-family: var(--mono);
-    font-size: 1.5rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    display: block;
-  }
-  .skill-name {
-    font-family: var(--sans);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-  }
-  .skill-desc {
-    font-size: 0.95rem;
-    color: var(--muted);
-    font-weight: 400;
-    line-height: 1.6;
-  }
+    nav ul a:hover {
+      color: var(--ink);
+    }
 
-  /* ABOUT */
-  #about {
-    background: #f0ebe2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-  }
-  .about-left {
-    padding: 6rem 3rem 6rem 4rem;
-    border-right: 1px solid var(--rule);
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .about-right {
-    padding: 6rem 4rem 6rem 3rem;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .about-text {
-    font-family: var(--sans);
-    font-size: 1.15rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--ink);
-  }
-  .about-detail {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-top: 1.5rem;
-  }
-  .edu-block {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-  }
-  .edu-label {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-  .edu-degree {
-    font-family: var(--sans);
-    font-size: 1.15rem;
-    font-weight: 500;
-  }
-  .edu-school { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
 
-  /* CONTACT */
-  #contact {
-    background: var(--paper);
-    color: var(--ink);
-    padding: 10rem 4rem 8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid var(--rule);
-  }
-  .contact-headline {
-    font-family: var(--sans);
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-  .contact-sub {
-    font-family: var(--sans);
-    font-size: 1.1rem;
-    color: var(--muted);
-    margin-bottom: 4rem;
-    text-align: center;
-    font-weight: 400;
-  }
-  .contact-grid {
-    display: flex;
-    gap: 4rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 900px;
-  }
-  .contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-  }
-  .contact-label {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-    transition: color 0.2s ease;
-  }
-  .contact-value {
-    font-family: var(--sans);
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 0.4rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-  .contact-item:hover .contact-label { color: var(--ink); }
-  .contact-item:hover .contact-value { border-color: var(--ink); transform: translateY(-3px); }
+    .hero-left {
+      padding: 5rem 3rem 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--rule);
+    }
 
-  /* IMPACT STORY */
-  #portfolio { background: var(--paper); }
-  .impact-story {
-    max-width: 800px;
-    margin: 0 auto;
-    background: transparent;
-    padding: 0;
-  }
-  .impact-story p {
-    font-family: var(--sans);
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-  }
-  .impact-story .drop-cap {
-    font-weight: 600;
-    color: var(--ink);
-  }
-  .impact-metrics {
-    font-family: var(--mono);
-    color: #c9962e;
-    font-weight: 500;
-    font-size: 0.9em;
-    padding: 0 0.3rem;
-  }
-  .impact-cta {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-  }
-  .portfolio-card {
-    display: flex; flex-direction: column;
-    background: rgba(14,13,11,0.03);
-    border: 1px solid var(--rule);
-    padding: 2.5rem 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .portfolio-card:hover {
-    background: var(--ink);
-    color: var(--paper);
-    transform: translateY(-4px);
-  }
-  .portfolio-card:hover .portfolio-type, 
-  .portfolio-card:hover .portfolio-desc { color: rgba(245,240,232,0.7); }
-  .portfolio-type {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-  }
-  .portfolio-title {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .portfolio-desc {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-    transition: color 0.3s ease;
-  }
-  .portfolio-btn {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .portfolio-btn::after {
-    content: '→';
-    font-family: var(--sans);
-    transition: transform 0.2s;
-  }
-  .portfolio-card:hover .portfolio-btn::after { transform: translateX(4px); }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
 
-  /* VIEWER MODAL */
-  #viewer-modal {
-    display: flex; position: fixed; inset: 0; z-index: 1000;
-    background: rgba(5,5,5,0.85); backdrop-filter: blur(24px);
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  #viewer-modal.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .viewer-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(245,240,232,0.1);
-  }
-  .viewer-title {
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    color: var(--paper);
-    text-transform: uppercase;
-  }
-  .viewer-close {
-    background: transparent; border: none; cursor: pointer;
-    color: var(--paper); font-size: 2.5rem; font-weight: 300; line-height: 1;
-    transition: color 0.2s; padding: 0.5rem; margin-top: -5px;
-  }
-  .viewer-close:hover { color: var(--gold); }
-  .viewer-body {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-  }
-  .viewer-body iframe {
-    width: 100%; height: 100%; border: none;
-    background: var(--paper);
-  }
-  .mammoth-content {
-    width: 100%; max-width: 900px;
-    height: 100%; overflow-y: auto;
-    background: var(--paper);
-    color: var(--ink);
-    padding: 4rem 5rem;
-    margin: 0 auto;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  }
-  .mammoth-content h1, .mammoth-content h2, .mammoth-content h3 {
-    font-family: var(--serif); font-weight: 400; margin: 1.5em 0 0.5em;
-  }
-  .mammoth-content h1 { font-size: 2.5rem; }
-  .mammoth-content p { margin-bottom: 1.2em; line-height: 1.8; }
-  .mammoth-content img { max-width: 100%; height: auto; margin: 2rem 0; }
-  .mammoth-content ul, .mammoth-content ol { margin-left: 2rem; margin-bottom: 1.2em; }
-  .mammoth-loading {
-    color: var(--paper); font-family: var(--mono); text-align: center; margin-top: 20%;
-    font-size: 0.9rem; letter-spacing: 0.1em;
-  }
+    .hero-name {
+      font-family: var(--sans);
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
 
-  /* FOOTER */
-  footer {
-    background: var(--ink);
-    color: rgba(245,240,232,0.25);
-    text-align: center;
-    padding: 1.5rem;
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    border-top: 1px solid rgba(245,240,232,0.08);
-  }
+    .hero-name em {
+      font-style: normal;
+      color: var(--muted);
+    }
 
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--paper); }
-  ::-webkit-scrollbar-thumb { background: var(--rule); }
+    .hero-tagline {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--muted);
+      max-width: 45ch;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
 
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    nav ul { display: none; }
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 5rem 1.5rem 2rem; border-right: none; border-bottom: 2px solid var(--ink); }
-    .hero-right { padding: 2rem 1.5rem 4rem; }
-    .exp-grid { grid-template-columns: 1fr; padding: 2rem; }
-    .exp-timeline { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; padding-bottom: 2rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .exp-detail { padding-left: 0; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    #about { grid-template-columns: 1fr; }
-    .about-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 3rem 1.5rem; }
-    .about-right { padding: 3rem 1.5rem; }
-    section { padding: 4rem 1.5rem; }
-    .section-title { font-size: 2rem; }
-    .mammoth-content { padding: 2rem 1.5rem; }
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .impact-story p { font-size: 1.1rem; }
-    .contact-grid { flex-direction: column; gap: 3rem; align-items: center; }
-  }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-  @media (max-width: 600px) {
-    .skills-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .skill-card { padding: 2rem 1.5rem; }
-    .exp-grid { padding: 1.5rem; }
-    .hero-name { font-size: 2rem; }
-    .contact-headline { font-size: 2rem; }
-    .hero-left { padding: 6rem 1rem 2rem; }
-    section { padding: 3rem 1.25rem; }
-    .btn { padding: 0.75rem 1.25rem; font-size: 0.65rem; }
-    .btn-primary { padding: 0.75rem 1.5rem; }
-  }
-</style>
+    .btn {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      transition: background 0.2s, transform 0.1s;
+      cursor: pointer;
+      background: var(--paper);
+      transform: translateY(0);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
+
+    .btn:hover {
+      background: rgba(17, 17, 17, 0.05);
+    }
+
+    .btn:active {
+      transform: translateY(4px);
+    }
+
+    .btn-ghost {
+      border-color: transparent;
+      color: var(--muted);
+      border-radius: 4px;
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      color: var(--ink);
+      background: transparent;
+      text-decoration: underline;
+    }
+
+    .btn-primary {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2.5rem;
+      background: var(--ink);
+      color: var(--paper);
+      border: 2px solid var(--ink);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      transform: translate(0, 0);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+      color: var(--paper);
+    }
+
+    .btn-primary:active {
+      transform: translate(4px, 4px);
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.65rem;
+      border-radius: 2px;
+    }
+
+    .hero-right {
+      padding: 5rem 4rem 5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 3rem;
+    }
+
+    .stat {
+      padding: 1.5rem;
+      background: rgba(14, 13, 11, 0.04);
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .hero-location {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-location::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* SECTION COMMON */
+    section {
+      padding: 6rem 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--sans);
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    /* EXPERIENCE */
+    #experience {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    #experience .section-title {
+      color: var(--ink);
+    }
+
+    #experience .section-header {
+      border-color: var(--rule);
+    }
+
+    #experience .section-num {
+      color: var(--gold-light);
+    }
+
+    .exp-grid {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      padding: 3rem;
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+    }
+
+    .exp-timeline {
+      padding-right: 3rem;
+      border-right: 1px solid rgba(245, 240, 232, 0.1);
+    }
+
+    .exp-item-nav {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .exp-item-nav.active {
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .exp-item-nav.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1.25rem;
+      bottom: 1.25rem;
+      width: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .exp-item-nav.active .exp-nav-company {
+      color: var(--gold-light);
+    }
+
+    .exp-item-nav.active .exp-nav-role {
+      color: var(--paper);
+    }
+
+    .exp-nav-company {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .exp-nav-role {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-top: 0.2rem;
+      transition: color 0.2s;
+    }
+
+    .exp-nav-date {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .exp-detail {
+      padding-left: 3rem;
+    }
+
+    .exp-panel {
+      display: none;
+    }
+
+    .exp-panel.active {
+      display: block;
+      animation: fadeUp 0.3s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .exp-panel-company {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-panel-role {
+      font-family: var(--sans);
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-panel-date {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .exp-panel ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .exp-panel ul li {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.65;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .exp-panel ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.8rem;
+    }
+
+    .exp-panel ul li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* SKILLS */
+    #skills {
+      background: var(--paper);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: transparent;
+    }
+
+    .skill-card {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      padding: 3rem 2.5rem;
+      transition: all 0.4s ease;
+    }
+
+    .skill-card:hover {
+      transform: translate(4px, 4px);
+    }
+
+    .skill-icon {
+      font-family: var(--mono);
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .skill-name {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+    #about {
+      background: #f0ebe2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0;
+    }
+
+    .about-left {
+      padding: 6rem 3rem 6rem 4rem;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-right {
+      padding: 6rem 4rem 6rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-text {
+      font-family: var(--sans);
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .about-detail {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 1.5rem;
+    }
+
+    .edu-block {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .edu-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-degree {
+      font-family: var(--sans);
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--paper);
+      color: var(--ink);
+      padding: 10rem 4rem 8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid var(--rule);
+    }
+
+    .contact-headline {
+      font-family: var(--sans);
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .contact-sub {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 4rem;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .contact-grid {
+      display: flex;
+      gap: 4rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .contact-value {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.4rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact-item:hover .contact-label {
+      color: var(--ink);
+    }
+
+    .contact-item:hover .contact-value {
+      border-color: var(--ink);
+      transform: translateY(-3px);
+    }
+
+    /* IMPACT STORY */
+    #portfolio {
+      background: var(--paper);
+    }
+
+    .impact-story {
+      max-width: 800px;
+      margin: 0 auto;
+      background: transparent;
+      padding: 0;
+    }
+
+    .impact-story p {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .impact-story .drop-cap {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .impact-metrics {
+      font-family: var(--mono);
+      color: #c9962e;
+      font-weight: 500;
+      font-size: 0.9em;
+      padding: 0 0.3rem;
+    }
+
+    .impact-cta {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      display: flex;
+      flex-direction: column;
+      background: rgba(14, 13, 11, 0.03);
+      border: 1px solid var(--rule);
+      padding: 2.5rem 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .portfolio-card:hover {
+      background: var(--ink);
+      color: var(--paper);
+      transform: translateY(-4px);
+    }
+
+    .portfolio-card:hover .portfolio-type,
+    .portfolio-card:hover .portfolio-desc {
+      color: rgba(245, 240, 232, 0.7);
+    }
+
+    .portfolio-type {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .portfolio-title {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+      transition: color 0.3s ease;
+    }
+
+    .portfolio-btn {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .portfolio-btn::after {
+      content: '→';
+      font-family: var(--sans);
+      transition: transform 0.2s;
+    }
+
+    .portfolio-card:hover .portfolio-btn::after {
+      transform: translateX(4px);
+    }
+
+    /* VIEWER MODAL */
+    #viewer-modal {
+      display: flex;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(24px);
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    #viewer-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .viewer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+    }
+
+    .viewer-title {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--paper);
+      text-transform: uppercase;
+    }
+
+    .viewer-close {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--paper);
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1;
+      transition: color 0.2s;
+      padding: 0.5rem;
+      margin-top: -5px;
+    }
+
+    .viewer-close:hover {
+      color: var(--gold);
+    }
+
+    .viewer-body {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .viewer-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: var(--paper);
+    }
+
+    .mammoth-content {
+      width: 100%;
+      max-width: 900px;
+      height: 100%;
+      overflow-y: auto;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 4rem 5rem;
+      margin: 0 auto;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .mammoth-content h1,
+    .mammoth-content h2,
+    .mammoth-content h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      margin: 1.5em 0 0.5em;
+    }
+
+    .mammoth-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .mammoth-content p {
+      margin-bottom: 1.2em;
+      line-height: 1.8;
+    }
+
+    .mammoth-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
+
+    .mammoth-content ul,
+    .mammoth-content ol {
+      margin-left: 2rem;
+      margin-bottom: 1.2em;
+    }
+
+    .mammoth-loading {
+      color: var(--paper);
+      font-family: var(--mono);
+      text-align: center;
+      margin-top: 20%;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      color: rgba(245, 240, 232, 0.25);
+      text-align: center;
+      padding: 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      border-top: 1px solid rgba(245, 240, 232, 0.08);
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--paper);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--rule);
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding: 5rem 1.5rem 2rem;
+        border-right: none;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .hero-right {
+        padding: 2rem 1.5rem 4rem;
+      }
+
+      .exp-grid {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+
+      .exp-timeline {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding-right: 0;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .exp-detail {
+        padding-left: 0;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      #about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-left {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 3rem 1.5rem;
+      }
+
+      .about-right {
+        padding: 3rem 1.5rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .mammoth-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-story p {
+        font-size: 1.1rem;
+      }
+
+      .contact-grid {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .skill-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .exp-grid {
+        padding: 1.5rem;
+      }
+
+      .hero-name {
+        font-size: 2rem;
+      }
+
+      .contact-headline {
+        font-size: 2rem;
+      }
+
+      .hero-left {
+        padding: 6rem 1rem 2rem;
+      }
+
+      section {
+        padding: 3rem 1.25rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.65rem;
+      }
+
+      .btn-primary {
+        padding: 0.75rem 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 
-<header>
-<nav>
-  <span class="logo">Pratik Prakash</span>
-  <div class="nav-right">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Story</a></li>
-      <li><a href="#" onclick="event.preventDefault(); openViewer('Pratik_Prakash_Resume_ATS.pdf', 'pdf', 'Pratik Prakash — Resume')">Resume</a></li>
-    </ul>
-    <a href="mailto:pratikprakash50@gmail.com" class="btn-primary nav-cta">Let's Talk</a>
-  </div>
-</nav>
-</header>
-
-<div class="icon-background">
-  <i data-lucide="laptop" class="bg-icon" data-speed="0.04" style="top: 5%; left: 8%; width: 220px; height: 220px;"></i>
-  <i data-lucide="pen-tool" class="bg-icon" data-speed="-0.03" style="top: 15%; right: 10%; width: 160px; height: 160px;"></i>
-  <i data-lucide="file-text" class="bg-icon" data-speed="0.05" style="top: 25%; left: 15%; width: 190px; height: 190px;"></i>
-  <i data-lucide="book-open" class="bg-icon" data-speed="-0.04" style="top: 35%; right: 12%; width: 240px; height: 240px;"></i>
-  <i data-lucide="mouse" class="bg-icon" data-speed="0.03" style="top: 45%; left: 10%; width: 150px; height: 150px;"></i>
-  <i data-lucide="folder" class="bg-icon" data-speed="0.04" style="top: 55%; right: 18%; width: 180px; height: 180px;"></i>
-  <i data-lucide="bar-chart-2" class="bg-icon" data-speed="-0.03" style="top: 65%; left: 14%; width: 200px; height: 200px;"></i>
-  <i data-lucide="paperclip" class="bg-icon" data-speed="0.02" style="top: 75%; right: 12%; width: 140px; height: 140px;"></i>
-  <i data-lucide="smartphone" class="bg-icon" data-speed="-0.05" style="top: 85%; left: 8%; width: 160px; height: 160px;"></i>
-  <i data-lucide="compass" class="bg-icon" data-speed="-0.02" style="top: 95%; left: 16%; width: 210px; height: 210px;"></i>
-</div>
-
-<main>
-<section class="hero" id="home">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Content Marketer & Editorial PM</p>
-    <h1 class="hero-name">Pratik<br><em>Prakash</em></h1>
-    <p class="hero-tagline">Building brand language from the ground up — where editorial instinct meets <em class="highlighter">measurable growth</em>.</p>
-    <div class="hero-cta">
-      <a href="#portfolio" class="btn-primary">See How I Scale Brands</a>
-      <a href="#" onclick="event.preventDefault(); openViewer('Pratik_Prakash_Resume_ATS.pdf', 'pdf', 'Pratik Prakash — Resume')" class="btn">View Resume</a>
-      <a href="mailto:pratikprakash50@gmail.com" class="btn btn-ghost">Book a Discovery Call</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">30K</div>
-        <div class="stat-label">Monthly Clicks</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">3.4M</div>
-        <div class="stat-label">Total Impressions</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">300+</div>
-        <div class="stat-label">SEO Blog Posts</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">1300+</div>
-        <div class="stat-label">LinkedIn Followers</div>
-      </div>
-    </div>
-    <p class="hero-location">Bengaluru, India</p>
-  </div>
-</section>
-
-<section id="about">
-  <div class="about-left">
-    <p class="about-text">"A strategist who builds with words — scaling brands from silence to signal."</p>
-    <p class="about-detail">Strategic Content Marketer and Editorial Project Manager with a strong foundation in journalism and editorial quality assurance. Proven ability to review, edit, and optimize SEO-informed content that drives lead generation and aligns with overarching business goals. Adept at building brand language from the ground up, ensuring adherence to regional language standards, and managing cross-functional projects across multiple teams under tight deadlines.</p>
-  </div>
-  <div class="about-right">
-    <div class="section-header" style="margin-bottom: 2rem;">
-      <span class="section-num">01</span>
-      <h2 class="section-title" style="font-size: 2rem;">Background</h2>
-    </div>
-    <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8;">My career began at SiliconIndia, where I interviewed CXOs and CTOs of major US companies — translating executive insight into compelling B2B narratives. Over three years, I grew from writer to sub-editor to project incharge, before joining Firstock Broking to build their entire content ecosystem from scratch.</p>
-    <div class="edu-block">
-      <p class="edu-label">Education</p>
-      <p class="edu-degree">B.A. Journalism & Mass Communication</p>
-      <p class="edu-school">Jagannath International Management School, Vasant Kunj · 2019–2022</p>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="section-header">
-    <span class="section-num">02</span>
-    <h2 class="section-title">Experience</h2>
-  </div>
-  <div class="exp-grid">
-    <div class="exp-timeline">
-      <div class="exp-item-nav active" onclick="showExp('firstock')">
-        <div class="exp-nav-company">Firstock Broking</div>
-        <div class="exp-nav-role">Content Team Lead</div>
-        <div class="exp-nav-date">Mar 2025 – Present</div>
-      </div>
-      <div class="exp-item-nav" onclick="showExp('si-pm')">
-        <div class="exp-nav-company">SiliconIndia</div>
-        <div class="exp-nav-role">Project Incharge</div>
-        <div class="exp-nav-date">Nov 2023 – Jan 2025</div>
-      </div>
-      <div class="exp-item-nav" onclick="showExp('si-sub')">
-        <div class="exp-nav-company">SiliconIndia</div>
-        <div class="exp-nav-role">Sub Editor</div>
-        <div class="exp-nav-date">Oct 2022 – Nov 2023</div>
-      </div>
-      <div class="exp-item-nav" onclick="showExp('si-writer')">
-        <div class="exp-nav-company">SiliconIndia</div>
-        <div class="exp-nav-role">Content Writer</div>
-        <div class="exp-nav-date">Jun 2022 – Oct 2022</div>
-      </div>
-    </div>
-    <div class="exp-detail">
-      <div class="exp-panel active" id="exp-firstock">
-        <p class="exp-panel-company">Firstock Broking Private Limited</p>
-        <p class="exp-panel-role">Content Team Lead,<br>Marketing Team</p>
-        <p class="exp-panel-date">March 2025 – Present</p>
+  <header>
+    <nav>
+      <span class="logo">Pratik Prakash</span>
+      <div class="nav-right">
         <ul>
-          <li><strong>SEO & Lead Generation:</strong> Executed a content strategy that scaled website traffic from 0 to 30,000 clicks per month and generated 3.4 million total impressions. Authored high-converting B2C email templates for the sales team and engaging ad copy to drive lead generation campaigns.</li>
-          <li><strong>Brand Standards & Web Collaboration:</strong> Conceptualized the brand language from scratch and optimized core website language, ensuring cohesive messaging across digital platforms.</li>
-          <li><strong>High-Volume Content Production:</strong> Authored over 300 SEO-driven blog posts and structured a comprehensive knowledge base with over 1,000 targeted FAQs for customer support.</li>
-          <li><strong>Multi-Channel Marketing:</strong> Managed corporate LinkedIn growth (200 to 1,300+ followers) and scripted compelling video content for YouTube and Instagram Reels to boost brand visibility.</li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Story</a></li>
+          <li><a href="#"
+              onclick="event.preventDefault(); openViewer('Pratik_Prakash_Resume_ATS.pdf', 'pdf', 'Pratik Prakash — Resume')">Resume</a>
+          </li>
         </ul>
+        <a href="mailto:pratikprakash50@gmail.com" class="btn-primary nav-cta">Let's Talk</a>
       </div>
-      <div class="exp-panel" id="exp-si-pm">
-        <p class="exp-panel-company">SiliconIndia</p>
-        <p class="exp-panel-role">Project Incharge</p>
-        <p class="exp-panel-date">November 2023 – January 2025</p>
-        <ul>
-          <li><strong>Cross-Functional Leadership:</strong> Spearheaded complex publishing projects, acting as the primary liaison between Editorial, Sales, Design, Compliance, and SEO teams to ensure seamless execution and timely delivery under strict deadlines.</li>
-          <li><strong>Stakeholder Alignment:</strong> Ensured all project components incorporated stakeholder feedback and aligned with overarching business and editorial goals from conception to final publication.</li>
-        </ul>
+    </nav>
+  </header>
+
+  <div class="icon-background">
+    <i data-lucide="laptop" class="bg-icon" data-speed="0.04"
+      style="top: 5%; left: 8%; width: 220px; height: 220px;"></i>
+    <i data-lucide="pen-tool" class="bg-icon" data-speed="-0.03"
+      style="top: 15%; right: 10%; width: 160px; height: 160px;"></i>
+    <i data-lucide="file-text" class="bg-icon" data-speed="0.05"
+      style="top: 25%; left: 15%; width: 190px; height: 190px;"></i>
+    <i data-lucide="book-open" class="bg-icon" data-speed="-0.04"
+      style="top: 35%; right: 12%; width: 240px; height: 240px;"></i>
+    <i data-lucide="mouse" class="bg-icon" data-speed="0.03"
+      style="top: 45%; left: 10%; width: 150px; height: 150px;"></i>
+    <i data-lucide="folder" class="bg-icon" data-speed="0.04"
+      style="top: 55%; right: 18%; width: 180px; height: 180px;"></i>
+    <i data-lucide="bar-chart-2" class="bg-icon" data-speed="-0.03"
+      style="top: 65%; left: 14%; width: 200px; height: 200px;"></i>
+    <i data-lucide="paperclip" class="bg-icon" data-speed="0.02"
+      style="top: 75%; right: 12%; width: 140px; height: 140px;"></i>
+    <i data-lucide="smartphone" class="bg-icon" data-speed="-0.05"
+      style="top: 85%; left: 8%; width: 160px; height: 160px;"></i>
+    <i data-lucide="compass" class="bg-icon" data-speed="-0.02"
+      style="top: 95%; left: 16%; width: 210px; height: 210px;"></i>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <p class="hero-eyebrow">Content Marketer & Editorial PM</p>
+        <h1 class="hero-name">Pratik<br><em>Prakash</em></h1>
+        <p class="hero-tagline">Building brand language from the ground up — where editorial instinct meets <em
+            class="highlighter">measurable growth</em>.</p>
+        <div class="hero-cta">
+          <a href="samples.html" class="btn-primary">View Sample Works</a>
+          <a href="#portfolio" class="btn">See How I Scale Brands</a>
+          <a href="#"
+            onclick="event.preventDefault(); openViewer('Pratik_Prakash_Resume_ATS.pdf', 'pdf', 'Pratik Prakash — Resume')"
+            class="btn">View Resume</a>
+          <a href="mailto:pratikprakash50@gmail.com" class="btn btn-ghost">Book a Discovery Call</a>
+        </div>
       </div>
-      <div class="exp-panel" id="exp-si-sub">
-        <p class="exp-panel-company">SiliconIndia</p>
-        <p class="exp-panel-role">Sub Editor</p>
-        <p class="exp-panel-date">October 2022 – November 2023</p>
-        <ul>
-          <li><strong>Editorial Quality Assurance:</strong> Reviewed, edited, and refined initial drafts from the writing team, ensuring strict adherence to editorial guidelines, regional tone, and accuracy standards.</li>
-          <li><strong>Styling Guidance & Team Development:</strong> Provided clear styling guidance and constructive feedback to writers to consistently elevate publication standards.</li>
-        </ul>
+      <div class="hero-right">
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">30K</div>
+            <div class="stat-label">Monthly Clicks</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3.4M</div>
+            <div class="stat-label">Total Impressions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">300+</div>
+            <div class="stat-label">SEO Blog Posts</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1300+</div>
+            <div class="stat-label">LinkedIn Followers</div>
+          </div>
+        </div>
+        <p class="hero-location">Bengaluru, India</p>
       </div>
-      <div class="exp-panel" id="exp-si-writer">
-        <p class="exp-panel-company">SiliconIndia</p>
-        <p class="exp-panel-role">Content Writer</p>
-        <p class="exp-panel-date">June 2022 – October 2022</p>
-        <ul>
-          <li><strong>B2B Content Creation:</strong> Translated high-level executive insights into engaging, comprehensive B2B company profiles and long-form articles.</li>
-          <li><strong>Executive Interviewing:</strong> Conducted in-depth interviews with CXOs and CTOs of prominent US-based companies across complex technical domains, including AI, Aerospace, and Defense.</li>
-        </ul>
+    </section>
+
+    <section id="about">
+      <div class="about-left">
+        <p class="about-text">"A strategist who builds with words — scaling brands from silence to signal."</p>
+        <p class="about-detail">Strategic Content Marketer and Editorial Project Manager with a strong foundation in
+          journalism and editorial quality assurance. Proven ability to review, edit, and optimize SEO-informed content
+          that drives lead generation and aligns with overarching business goals. Adept at building brand language from
+          the ground up, ensuring adherence to regional language standards, and managing cross-functional projects
+          across multiple teams under tight deadlines.</p>
       </div>
+      <div class="about-right">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="section-num">01</span>
+          <h2 class="section-title" style="font-size: 2rem;">Background</h2>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8;">My career began at SiliconIndia, where I
+          interviewed CXOs and CTOs of major US companies — translating executive insight into compelling B2B
+          narratives. Over three years, I grew from writer to sub-editor to project incharge, before joining Firstock
+          Broking to build their entire content ecosystem from scratch.</p>
+        <div class="edu-block">
+          <p class="edu-label">Education</p>
+          <p class="edu-degree">B.A. Journalism & Mass Communication</p>
+          <p class="edu-school">Jagannath International Management School, Vasant Kunj · 2019–2022</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-timeline">
+          <div class="exp-item-nav active" onclick="showExp('firstock')">
+            <div class="exp-nav-company">Firstock Broking</div>
+            <div class="exp-nav-role">Content Team Lead</div>
+            <div class="exp-nav-date">Mar 2025 – Present</div>
+          </div>
+          <div class="exp-item-nav" onclick="showExp('si-pm')">
+            <div class="exp-nav-company">SiliconIndia</div>
+            <div class="exp-nav-role">Project Incharge</div>
+            <div class="exp-nav-date">Nov 2023 – Jan 2025</div>
+          </div>
+          <div class="exp-item-nav" onclick="showExp('si-sub')">
+            <div class="exp-nav-company">SiliconIndia</div>
+            <div class="exp-nav-role">Sub Editor</div>
+            <div class="exp-nav-date">Oct 2022 – Nov 2023</div>
+          </div>
+          <div class="exp-item-nav" onclick="showExp('si-writer')">
+            <div class="exp-nav-company">SiliconIndia</div>
+            <div class="exp-nav-role">Content Writer</div>
+            <div class="exp-nav-date">Jun 2022 – Oct 2022</div>
+          </div>
+        </div>
+        <div class="exp-detail">
+          <div class="exp-panel active" id="exp-firstock">
+            <p class="exp-panel-company">Firstock Broking Private Limited</p>
+            <p class="exp-panel-role">Content Team Lead,<br>Marketing Team</p>
+            <p class="exp-panel-date">March 2025 – Present</p>
+            <ul>
+              <li><strong>SEO & Lead Generation:</strong> Executed a content strategy that scaled website traffic from 0
+                to 30,000 clicks per month and generated 3.4 million total impressions. Authored high-converting B2C
+                email templates for the sales team and engaging ad copy to drive lead generation campaigns.</li>
+              <li><strong>Brand Standards & Web Collaboration:</strong> Conceptualized the brand language from scratch
+                and optimized core website language, ensuring cohesive messaging across digital platforms.</li>
+              <li><strong>High-Volume Content Production:</strong> Authored over 300 SEO-driven blog posts and
+                structured a comprehensive knowledge base with over 1,000 targeted FAQs for customer support.</li>
+              <li><strong>Multi-Channel Marketing:</strong> Managed corporate LinkedIn growth (200 to 1,300+ followers)
+                and scripted compelling video content for YouTube and Instagram Reels to boost brand visibility.</li>
+            </ul>
+          </div>
+          <div class="exp-panel" id="exp-si-pm">
+            <p class="exp-panel-company">SiliconIndia</p>
+            <p class="exp-panel-role">Project Incharge</p>
+            <p class="exp-panel-date">November 2023 – January 2025</p>
+            <ul>
+              <li><strong>Cross-Functional Leadership:</strong> Spearheaded complex publishing projects, acting as the
+                primary liaison between Editorial, Sales, Design, Compliance, and SEO teams to ensure seamless execution
+                and timely delivery under strict deadlines.</li>
+              <li><strong>Stakeholder Alignment:</strong> Ensured all project components incorporated stakeholder
+                feedback and aligned with overarching business and editorial goals from conception to final publication.
+              </li>
+            </ul>
+          </div>
+          <div class="exp-panel" id="exp-si-sub">
+            <p class="exp-panel-company">SiliconIndia</p>
+            <p class="exp-panel-role">Sub Editor</p>
+            <p class="exp-panel-date">October 2022 – November 2023</p>
+            <ul>
+              <li><strong>Editorial Quality Assurance:</strong> Reviewed, edited, and refined initial drafts from the
+                writing team, ensuring strict adherence to editorial guidelines, regional tone, and accuracy standards.
+              </li>
+              <li><strong>Styling Guidance & Team Development:</strong> Provided clear styling guidance and constructive
+                feedback to writers to consistently elevate publication standards.</li>
+            </ul>
+          </div>
+          <div class="exp-panel" id="exp-si-writer">
+            <p class="exp-panel-company">SiliconIndia</p>
+            <p class="exp-panel-role">Content Writer</p>
+            <p class="exp-panel-date">June 2022 – October 2022</p>
+            <ul>
+              <li><strong>B2B Content Creation:</strong> Translated high-level executive insights into engaging,
+                comprehensive B2B company profiles and long-form articles.</li>
+              <li><strong>Executive Interviewing:</strong> Conducted in-depth interviews with CXOs and CTOs of prominent
+                US-based companies across complex technical domains, including AI, Aerospace, and Defense.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Craft</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <span class="skill-icon">#</span>
+          <p class="skill-name">Content Strategy & SEO</p>
+          <p class="skill-desc">SEO-driven content production, full-funnel lead generation strategy, and consistent
+            organic traffic growth.</p>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">@</span>
+          <p class="skill-name">Digital & Social Media</p>
+          <p class="skill-desc">B2C & B2B multi-channel content creation, persuasive ad copy, and localized web content
+            optimization.</p>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">§</span>
+          <p class="skill-name">Editorial & Management</p>
+          <p class="skill-desc">Advanced copyediting, proofreading, maintaining editorial quality assurance, and brand
+            language standardization.</p>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">¶</span>
+          <p class="skill-name">Project Leadership</p>
+          <p class="skill-desc">Leading cross-functional collaboration, ensuring tight stakeholder management, and
+            establishing process optimization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">The Editorial Edge</h2>
+      </div>
+      <div class="impact-story">
+        <p><span class="drop-cap">M</span>y foundation wasn't in marketing—it was in journalism. At SiliconIndia, I
+          spent years dissecting the minds of CXOs and engineering complex publishing pipelines. When I walked into
+          Firstock Broking, there was no content ecosystem. Just an objective.</p>
+        <p>Leveraging the editorial rigor and cross-functional leadership I honed in publishing, I didn't just write
+          blog posts; I architected a growth engine from zero. By executing a high-volume, full-funnel strategy, we
+          scaled to 300+ optimized articles, catapulting organic traffic from total silence to <span
+            class="impact-metrics">30,000 monthly clicks</span> and <span class="impact-metrics">3.4 million
+            impressions</span>.</p>
+        <p>Let's address the artificial elephant in the room: with AI making content production so incredibly fast, why
+          do you still need a writer? Because while algorithms are great for speed, they often struggle with soul. I
+          treat AI as a helpful co-pilot to multiply my throughput, while acting as the final gatekeeper to protect your
+          brand's unique voice. When it comes to standing out, you still need a human to ensure every piece has the
+          <em>right</em> stuff.
+        </p>
+        <p>Having successfully engineered a media machine from the ground up, the blueprint is proven. Now, I am ready
+          to deploy it against even bigger challenges.</p>
+        <div class="impact-cta">
+          <a href="samples.html" class="btn-primary" style="margin-right: 1.5rem;">View Sample Works</a>
+          <a href="#contact" class="btn">Book a Growth Challenge Call</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="contact-headline">Ready to Scale?</h2>
+      <div class="contact-sub">Let's Talk.</div>
+
+      <div class="contact-grid">
+        <a href="mailto:pratikprakash50@gmail.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">pratikprakash50@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/pratik-prakash-9a7049230/" target="_blank" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">Connect & Follow</span>
+        </a>
+        <a href="tel:+918130983184" class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+91 81309 83184</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Pratik Prakash &nbsp;·&nbsp; Bengaluru, India
+  </footer>
+  <!-- VIEWER MODAL -->
+  <div id="viewer-modal">
+    <div class="viewer-header">
+      <div class="viewer-title" id="viewer-title">Document Viewer</div>
+      <button class="viewer-close" onclick="closeViewer()" aria-label="Close Viewer">&times;</button>
+    </div>
+    <div class="viewer-body" id="viewer-body">
+      <!-- Viewer content injected via JS -->
     </div>
   </div>
-</section>
 
-<section id="skills">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2 class="section-title">Craft</h2>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <span class="skill-icon">#</span>
-      <p class="skill-name">Content Strategy & SEO</p>
-      <p class="skill-desc">SEO-driven content production, full-funnel lead generation strategy, and consistent organic traffic growth.</p>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">@</span>
-      <p class="skill-name">Digital & Social Media</p>
-      <p class="skill-desc">B2C & B2B multi-channel content creation, persuasive ad copy, and localized web content optimization.</p>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">§</span>
-      <p class="skill-name">Editorial & Management</p>
-      <p class="skill-desc">Advanced copyediting, proofreading, maintaining editorial quality assurance, and brand language standardization.</p>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">¶</span>
-      <p class="skill-name">Project Leadership</p>
-      <p class="skill-desc">Leading cross-functional collaboration, ensuring tight stakeholder management, and establishing process optimization.</p>
-    </div>
-  </div>
-</section>
+  <script>
+    function openViewer(url, type, title) {
+      const modal = document.getElementById('viewer-modal');
+      const titleEl = document.getElementById('viewer-title');
+      const bodyEl = document.getElementById('viewer-body');
 
-<section id="portfolio">
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <h2 class="section-title">The Editorial Edge</h2>
-  </div>
-  <div class="impact-story">
-    <p><span class="drop-cap">M</span>y foundation wasn't in marketing—it was in journalism. At SiliconIndia, I spent years dissecting the minds of CXOs and engineering complex publishing pipelines. When I walked into Firstock Broking, there was no content ecosystem. Just an objective.</p>
-    <p>Leveraging the editorial rigor and cross-functional leadership I honed in publishing, I didn't just write blog posts; I architected a growth engine from zero. By executing a high-volume, full-funnel strategy, we scaled to 300+ optimized articles, catapulting organic traffic from total silence to <span class="impact-metrics">30,000 monthly clicks</span> and <span class="impact-metrics">3.4 million impressions</span>.</p>
-    <p>Let's address the artificial elephant in the room: with AI making content production so incredibly fast, why do you still need a writer? Because while algorithms are great for speed, they often struggle with soul. I treat AI as a helpful co-pilot to multiply my throughput, while acting as the final gatekeeper to protect your brand's unique voice. When it comes to standing out, you still need a human to ensure every piece has the <em>write</em> stuff.</p>
-    <p>Having successfully engineered a media machine from the ground up, the blueprint is proven. Now, I am ready to deploy it against even bigger challenges.</p>
-    <div class="impact-cta">
-      <a href="#contact" class="btn-primary">Book a Growth Challenge Call</a>
-    </div>
-  </div>
-</section>
+      titleEl.textContent = title;
+      bodyEl.innerHTML = '<div class="mammoth-loading">Loading document...</div>';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Stop background scrolling
 
-<section id="contact">
-  <h2 class="contact-headline">Ready to Scale?</h2>
-  <div class="contact-sub">Let's Talk.</div>
-  
-  <div class="contact-grid">
-    <a href="mailto:pratikprakash50@gmail.com" class="contact-item">
-      <span class="contact-label">Email</span>
-      <span class="contact-value">pratikprakash50@gmail.com</span>
-    </a>
-    <a href="https://www.linkedin.com/in/pratik-prakash-9a7049230/" target="_blank" class="contact-item">
-      <span class="contact-label">LinkedIn</span>
-      <span class="contact-value">Connect & Follow</span>
-    </a>
-    <a href="tel:+918130983184" class="contact-item">
-      <span class="contact-label">Phone</span>
-      <span class="contact-value">+91 81309 83184</span>
-    </a>
-  </div>
-</section>
-</main>
-
-<footer>
-  &copy; 2025 Pratik Prakash &nbsp;·&nbsp; Bengaluru, India
-</footer>
-<!-- VIEWER MODAL -->
-<div id="viewer-modal">
-  <div class="viewer-header">
-    <div class="viewer-title" id="viewer-title">Document Viewer</div>
-    <button class="viewer-close" onclick="closeViewer()" aria-label="Close Viewer">&times;</button>
-  </div>
-  <div class="viewer-body" id="viewer-body">
-    <!-- Viewer content injected via JS -->
-  </div>
-</div>
-
-<script>
-  function openViewer(url, type, title) {
-    const modal = document.getElementById('viewer-modal');
-    const titleEl = document.getElementById('viewer-title');
-    const bodyEl = document.getElementById('viewer-body');
-    
-    titleEl.textContent = title;
-    bodyEl.innerHTML = '<div class="mammoth-loading">Loading document...</div>';
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Stop background scrolling
-
-    if (type === 'pdf') {
-      bodyEl.innerHTML = `<iframe src="${url}"></iframe>`;
-    } else if (type === 'docx') {
-      fetch(url)
-        .then(response => {
-          if (!response.ok) throw new Error('Document not found');
-          return response.arrayBuffer();
-        })
-        .then(arrayBuffer => mammoth.convertToHtml({arrayBuffer: arrayBuffer}))
-        .then(result => {
-          bodyEl.innerHTML = `<div class="mammoth-content">${result.value}</div>`;
-        })
-        .catch(error => {
-          console.error(error);
-          bodyEl.innerHTML = `<div class="mammoth-content" style="display:flex;align-items:center;justify-content:center"><p style="color:var(--muted)">Unable to load document.</p></div>`;
-        });
+      if (type === 'pdf') {
+        bodyEl.innerHTML = `<iframe src="${url}"></iframe>`;
+      } else if (type === 'docx') {
+        fetch(url)
+          .then(response => {
+            if (!response.ok) throw new Error('Document not found');
+            return response.arrayBuffer();
+          })
+          .then(arrayBuffer => mammoth.convertToHtml({ arrayBuffer: arrayBuffer }))
+          .then(result => {
+            bodyEl.innerHTML = `<div class="mammoth-content">${result.value}</div>`;
+          })
+          .catch(error => {
+            console.error(error);
+            bodyEl.innerHTML = `<div class="mammoth-content" style="display:flex;align-items:center;justify-content:center"><p style="color:var(--muted)">Unable to load document.</p></div>`;
+          });
+      }
     }
-  }
 
-  function closeViewer() {
-    const modal = document.getElementById('viewer-modal');
-    const bodyEl = document.getElementById('viewer-body');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => { bodyEl.innerHTML = ''; }, 300); // Clear element after animation
-  }
-
-  // Close modal on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.getElementById('viewer-modal').classList.contains('active')) {
-      closeViewer();
-    }
-  });
-
-  function showExp(id) {
-    document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.exp-item-nav').forEach(n => n.classList.remove('active'));
-    document.getElementById('exp-' + id).classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
-
-  const navLinks = document.querySelectorAll('nav a');
-  const sections = document.querySelectorAll('section[id], .hero');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
-    });
-  });
-</script>
-<script>
-  let actx = null;
-  let tickBuffer = null;
-
-  function initAudio() {
-    if (actx) return;
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    actx = new AudioContext();
-
-    // Create a 10ms white noise buffer for typewriter ticks
-    const frameCount = actx.sampleRate * 0.01; 
-    tickBuffer = actx.createBuffer(1, frameCount, actx.sampleRate);
-    const channelData = tickBuffer.getChannelData(0);
-    for (let i = 0; i < frameCount; i++) {
-      channelData[i] = Math.random() * 2 - 1;
+    function closeViewer() {
+      const modal = document.getElementById('viewer-modal');
+      const bodyEl = document.getElementById('viewer-body');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { bodyEl.innerHTML = ''; }, 300); // Clear element after animation
     }
 
-    // Engine booted silently.
-  }
-
-  function playTick() {
-    if (!actx || actx.state === 'suspended') return;
-    const source = actx.createBufferSource();
-    source.buffer = tickBuffer;
-    
-    const filter = actx.createBiquadFilter();
-    filter.type = 'highpass';
-    filter.frequency.value = 5000;
-
-    const gainNode = actx.createGain();
-    gainNode.gain.setValueAtTime(0.04, actx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.01);
-
-    source.connect(filter);
-    filter.connect(gainNode);
-    gainNode.connect(actx.destination);
-    source.start();
-  }
-
-  function playClack() {
-    if (!actx || actx.state === 'suspended') return;
-    
-    // High-pitched plastic click (noise burst)
-    const noiseSource = actx.createBufferSource();
-    noiseSource.buffer = tickBuffer;
-    
-    const noiseFilter = actx.createBiquadFilter();
-    noiseFilter.type = 'highpass';
-    noiseFilter.frequency.value = 4000;
-    
-    const noiseGain = actx.createGain();
-    noiseGain.gain.setValueAtTime(0.5, actx.currentTime);
-    noiseGain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.015);
-    
-    noiseSource.connect(noiseFilter);
-    noiseFilter.connect(noiseGain);
-    noiseGain.connect(actx.destination);
-    noiseSource.start();
-
-    // The resonance "ping" of the switch spring
-    const osc = actx.createOscillator();
-    const oscGain = actx.createGain();
-    
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(1200, actx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(100, actx.currentTime + 0.02);
-    
-    oscGain.gain.setValueAtTime(0.15, actx.currentTime);
-    oscGain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.03);
-    
-    osc.connect(oscGain);
-    oscGain.connect(actx.destination);
-    
-    osc.start();
-    osc.stop(actx.currentTime + 0.04);
-  }
-
-  // Bind silent unlock to first interactions
-  document.addEventListener('mousedown', initAudio, { once: true });
-  document.addEventListener('keydown', initAudio, { once: true });
-  document.addEventListener('touchstart', initAudio, { once: true });
-
-  // Bind clack to all buttons and links
-  document.addEventListener('mousedown', (e) => {
-    if (e.target.closest('a') || e.target.closest('button')) {
-      playClack();
-    }
-  });
-
-  // Typewriter knob on scroll
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        if (Math.abs(window.scrollY - lastScrollY) > 60) {
-          playTick();
-          lastScrollY = window.scrollY;
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
-  // Scroll Animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.getElementById('viewer-modal').classList.contains('active')) {
+        closeViewer();
       }
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('section, .hero-left, .hero-right').forEach((el) => {
-    el.classList.add('hidden');
-    observer.observe(el);
-  });
+    function showExp(id) {
+      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.exp-item-nav').forEach(n => n.classList.remove('active'));
+      document.getElementById('exp-' + id).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
 
-  // Initialize Lucide Icons
-  lucide.createIcons();
-
-  // Premium Parallax Effect for Background Icons
-  const icons = document.querySelectorAll('.bg-icon');
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let currentX = mouseX;
-  let currentY = mouseY;
-  
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateIcons() {
-    currentX += (mouseX - currentX) * 0.05;
-    currentY += (mouseY - currentY) * 0.05;
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    const offsetX = currentX - centerX;
-    const offsetY = currentY - centerY;
-    
-    // Time variable for continuous smooth animation
-    const time = performance.now() * 0.001; 
-
-    icons.forEach((icon, index) => {
-      const speed = parseFloat(icon.getAttribute('data-speed'));
-      
-      // Calculate autonomous floating movement based on time and index
-      const driftX = Math.sin(time * 0.5 + index * 2) * 50;
-      const driftY = Math.cos(time * 0.4 + index * 1.5) * 50;
-      const autoRot = Math.sin(time * 0.3 + index) * 20;
-
-      // Combine parallax displacement with infinite float
-      const x = (offsetX * speed) + driftX;
-      const y = (offsetY * speed) + driftY;
-      const rot = ((offsetX + offsetY) * speed * 0.02) + autoRot;
-      
-      icon.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section[id], .hero');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
+      });
     });
-    requestAnimationFrame(animateIcons);
-  }
-  animateIcons();
+  </script>
+  <script>
+    let actx = null;
+    let tickBuffer = null;
 
-</script>
+    function initAudio() {
+      if (actx) return;
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      actx = new AudioContext();
+
+      // Create a 10ms white noise buffer for typewriter ticks
+      const frameCount = actx.sampleRate * 0.01;
+      tickBuffer = actx.createBuffer(1, frameCount, actx.sampleRate);
+      const channelData = tickBuffer.getChannelData(0);
+      for (let i = 0; i < frameCount; i++) {
+        channelData[i] = Math.random() * 2 - 1;
+      }
+
+      // Engine booted silently.
+    }
+
+    function playTick() {
+      if (!actx || actx.state === 'suspended') return;
+      const source = actx.createBufferSource();
+      source.buffer = tickBuffer;
+
+      const filter = actx.createBiquadFilter();
+      filter.type = 'highpass';
+      filter.frequency.value = 5000;
+
+      const gainNode = actx.createGain();
+      gainNode.gain.setValueAtTime(0.04, actx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.01);
+
+      source.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(actx.destination);
+      source.start();
+    }
+
+    function playClack() {
+      if (!actx || actx.state === 'suspended') return;
+
+      // High-pitched plastic click (noise burst)
+      const noiseSource = actx.createBufferSource();
+      noiseSource.buffer = tickBuffer;
+
+      const noiseFilter = actx.createBiquadFilter();
+      noiseFilter.type = 'highpass';
+      noiseFilter.frequency.value = 4000;
+
+      const noiseGain = actx.createGain();
+      noiseGain.gain.setValueAtTime(0.5, actx.currentTime);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.015);
+
+      noiseSource.connect(noiseFilter);
+      noiseFilter.connect(noiseGain);
+      noiseGain.connect(actx.destination);
+      noiseSource.start();
+
+      // The resonance "ping" of the switch spring
+      const osc = actx.createOscillator();
+      const oscGain = actx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(1200, actx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(100, actx.currentTime + 0.02);
+
+      oscGain.gain.setValueAtTime(0.15, actx.currentTime);
+      oscGain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.03);
+
+      osc.connect(oscGain);
+      oscGain.connect(actx.destination);
+
+      osc.start();
+      osc.stop(actx.currentTime + 0.04);
+    }
+
+    // Bind silent unlock to first interactions
+    document.addEventListener('mousedown', initAudio, { once: true });
+    document.addEventListener('keydown', initAudio, { once: true });
+    document.addEventListener('touchstart', initAudio, { once: true });
+
+    // Bind clack to all buttons and links
+    document.addEventListener('mousedown', (e) => {
+      if (e.target.closest('a') || e.target.closest('button')) {
+        playClack();
+      }
+    });
+
+    // Typewriter knob on scroll
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (Math.abs(window.scrollY - lastScrollY) > 60) {
+            playTick();
+            lastScrollY = window.scrollY;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Scroll Animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, .hero-left, .hero-right').forEach((el) => {
+      el.classList.add('hidden');
+      observer.observe(el);
+    });
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Premium Parallax Effect for Background Icons
+    const icons = document.querySelectorAll('.bg-icon');
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateIcons() {
+      currentX += (mouseX - currentX) * 0.05;
+      currentY += (mouseY - currentY) * 0.05;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const offsetX = currentX - centerX;
+      const offsetY = currentY - centerY;
+
+      // Time variable for continuous smooth animation
+      const time = performance.now() * 0.001;
+
+      icons.forEach((icon, index) => {
+        const speed = parseFloat(icon.getAttribute('data-speed'));
+
+        // Calculate autonomous floating movement based on time and index
+        const driftX = Math.sin(time * 0.5 + index * 2) * 50;
+        const driftY = Math.cos(time * 0.4 + index * 1.5) * 50;
+        const autoRot = Math.sin(time * 0.3 + index) * 20;
+
+        // Combine parallax displacement with infinite float
+        const x = (offsetX * speed) + driftX;
+        const y = (offsetY * speed) + driftY;
+        const rot = ((offsetX + offsetY) * speed * 0.02) + autoRot;
+
+        icon.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+      });
+      requestAnimationFrame(animateIcons);
+    }
+    animateIcons();
+
+  </script>
 </body>
+
 </html>

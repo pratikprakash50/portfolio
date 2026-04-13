@@ -1,0 +1,13 @@
+# Raw source documents - large files, keep local only
+drive-download-20260329T030218Z-1-001/
+Sample Work/
+*.zip
+*.mp4
+*.mpeg
+*.MP4
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
