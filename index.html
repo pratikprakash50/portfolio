@@ -13,6 +13,7 @@
 <link rel="canonical" href="https://pratikprakash.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -33,6 +34,7 @@
   html { scroll-behavior: smooth; }
 
   body {
+    position: relative;
     background-color: var(--paper);
     background-image: radial-gradient(var(--rule) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
@@ -54,7 +56,27 @@
     border: 2px solid var(--ink);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   }
-  
+
+  /* PREMIUM GEOMETRIC ICONS */
+  .icon-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .bg-icon {
+    position: absolute;
+    color: var(--ink);
+    opacity: 0.04;
+    transform-origin: center;
+    will-change: transform;
+    stroke-width: 1px; /* Makes it look extremely technical and sharp */
+  }
+
   .hidden { opacity: 0; transform: translateY(20px); transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1); }
   .visible { opacity: 1; transform: translateY(0); }
 
@@ -578,9 +600,12 @@
 
   /* VIEWER MODAL */
   #viewer-modal {
-    display: none; position: fixed; inset: 0; z-index: 1000;
+    display: flex; position: fixed; inset: 0; z-index: 1000;
     background: rgba(5,5,5,0.85); backdrop-filter: blur(24px);
     flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
   #viewer-modal.active {
     opacity: 1;
@@ -688,6 +713,7 @@
 </head>
 <body>
 
+
 <header>
 <nav>
   <span class="logo">Pratik Prakash</span>
@@ -697,11 +723,25 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#portfolio">Story</a></li>
+      <li><a href="#" onclick="event.preventDefault(); openViewer('Pratik_Prakash.pdf', 'pdf', 'Pratik Prakash — Resume')">Resume</a></li>
     </ul>
     <a href="mailto:pratikprakash50@gmail.com" class="btn-primary nav-cta">Let's Talk</a>
   </div>
 </nav>
 </header>
+
+<div class="icon-background">
+  <i data-lucide="laptop" class="bg-icon" data-speed="0.04" style="top: 5%; left: 8%; width: 220px; height: 220px;"></i>
+  <i data-lucide="pen-tool" class="bg-icon" data-speed="-0.03" style="top: 15%; right: 10%; width: 160px; height: 160px;"></i>
+  <i data-lucide="file-text" class="bg-icon" data-speed="0.05" style="top: 25%; left: 15%; width: 190px; height: 190px;"></i>
+  <i data-lucide="book-open" class="bg-icon" data-speed="-0.04" style="top: 35%; right: 12%; width: 240px; height: 240px;"></i>
+  <i data-lucide="mouse" class="bg-icon" data-speed="0.03" style="top: 45%; left: 10%; width: 150px; height: 150px;"></i>
+  <i data-lucide="folder" class="bg-icon" data-speed="0.04" style="top: 55%; right: 18%; width: 180px; height: 180px;"></i>
+  <i data-lucide="bar-chart-2" class="bg-icon" data-speed="-0.03" style="top: 65%; left: 14%; width: 200px; height: 200px;"></i>
+  <i data-lucide="paperclip" class="bg-icon" data-speed="0.02" style="top: 75%; right: 12%; width: 140px; height: 140px;"></i>
+  <i data-lucide="smartphone" class="bg-icon" data-speed="-0.05" style="top: 85%; left: 8%; width: 160px; height: 160px;"></i>
+  <i data-lucide="compass" class="bg-icon" data-speed="-0.02" style="top: 95%; left: 16%; width: 210px; height: 210px;"></i>
+</div>
 
 <main>
 <section class="hero" id="home">
@@ -711,6 +751,7 @@
     <p class="hero-tagline">Building brand language from the ground up — where editorial instinct meets <em class="highlighter">measurable growth</em>.</p>
     <div class="hero-cta">
       <a href="#portfolio" class="btn-primary">See How I Scale Brands</a>
+      <a href="#" onclick="event.preventDefault(); openViewer('Pratik_Prakash.pdf', 'pdf', 'Pratik Prakash — Resume')" class="btn">View Resume</a>
       <a href="mailto:pratikprakash50@gmail.com" class="btn btn-ghost">Book a Discovery Call</a>
     </div>
   </div>
@@ -1089,6 +1130,52 @@
     el.classList.add('hidden');
     observer.observe(el);
   });
+
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  // Premium Parallax Effect for Background Icons
+  const icons = document.querySelectorAll('.bg-icon');
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX;
+  let currentY = mouseY;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateIcons() {
+    currentX += (mouseX - currentX) * 0.05;
+    currentY += (mouseY - currentY) * 0.05;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const offsetX = currentX - centerX;
+    const offsetY = currentY - centerY;
+    
+    // Time variable for continuous smooth animation
+    const time = performance.now() * 0.001; 
+
+    icons.forEach((icon, index) => {
+      const speed = parseFloat(icon.getAttribute('data-speed'));
+      
+      // Calculate autonomous floating movement based on time and index
+      const driftX = Math.sin(time * 0.5 + index * 2) * 50;
+      const driftY = Math.cos(time * 0.4 + index * 1.5) * 50;
+      const autoRot = Math.sin(time * 0.3 + index) * 20;
+
+      // Combine parallax displacement with infinite float
+      const x = (offsetX * speed) + driftX;
+      const y = (offsetY * speed) + driftY;
+      const rot = ((offsetX + offsetY) * speed * 0.02) + autoRot;
+      
+      icon.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+    });
+    requestAnimationFrame(animateIcons);
+  }
+  animateIcons();
+
 </script>
 </body>
 </html>
