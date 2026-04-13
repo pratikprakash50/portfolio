@@ -194,7 +194,7 @@
   <h2 class="section-title">B2B Articles</h2>
   <div class="samples-grid">
 
-    <div class="sample-card" onclick="openDoc('docs/The Trillion-Rupee Pivot_ How L&T & Nvidia Are Building India\'s AI Brain.docx','Finance & Tech','The Trillion-Rupee Pivot')">
+    <div class="sample-card" onclick="openDoc('docs/The Trillion-Rupee Pivot_ How L&T &amp; Nvidia Are Building India’s AI Brain.docx','Finance &amp; Tech','The Trillion-Rupee Pivot')">
       <span class="tag">Finance & Tech</span>
       <h3>The Trillion-Rupee Pivot</h3>
       <p>How L&T & Nvidia are building India's AI Brain — the physical and algorithmic infrastructure behind a country's cognitive future.</p>
@@ -407,7 +407,8 @@
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
 
-      fetch(path)
+      const encodedPath = path.split('/').map(s => encodeURIComponent(s)).join('/');
+      fetch(encodedPath)
         .then(res => {
           if (!res.ok) throw new Error('File not found: ' + path);
           return res.arrayBuffer();
